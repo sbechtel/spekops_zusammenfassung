@@ -1,0 +1,136 @@
+\documentclass[11pt,a4paper]{scrartcl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{amsmath,amsthm,amssymb,dsfont}
+\usepackage{mathtools}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{esint}
+\usepackage{csquotes}
+\usepackage{textcomp}
+
+\usepackage{setspace}
+
+\parindent 0pt
+\linespread{1.5}
+
+% Makros
+
+\newcommand{\N}{\mathbb{N}} % natuerliche Zahlen
+\newcommand{\Z}{\mathbb{Z}} % ganze Zahlen
+\newcommand{\Q}{\mathbb{Q}} % rationale Zahlen
+\newcommand{\R}{\mathbb{R}} % reelle Zahlen
+\newcommand{\K}{\mathbb{K}} % Körper
+\newcommand{\C}{\mathbb{C}} % komplexe Zahlen
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\Hc}{\mathcal{H}}
+\newcommand{\Sc}{\mathcal{S}}
+\newcommand{\Kc}{\mathcal{K}}
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\Nc}{\mathcal{N}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\laplace}{\triangle}
+\newcommand{\circum}{\text{\textasciicircum}}
+
+% Umgebungen für Definitionen, Sätze, usw.
+
+\theoremstyle{plain}
+\newtheorem{thm}{Satz}[section]
+\newtheorem*{lem}{Lemma}
+\newtheorem{cor}[thm]{Korollar}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem*{ex}{Beispiel}
+\newtheorem*{ntion}{Notation}
+
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{bem}{Bemerkung}
+\newtheorem{bemnumber}[thm]{Bemerkung}
+
+\def\Satzrefname{Satz}
+
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\esssupp}{ess supp}
+\DeclareMathOperator{\essrange}{ess range}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\loc}{loc}
+\DeclareMathOperator{\pv}{pv}
+\DeclareMathOperator{\grad}{grad}
+
+\begin{document}
+
+\title{Zusammenfassung Spektraltheorie und Operatoralgebren}
+\author{Sebastian Bechtel}
+\maketitle
+
+\section{Spektraltheorie in $\B(\Hc)$}
+
+\subsection{Multiplikationsoperatoren und Borel-FK für diagonalisierbare Operatoren}
+
+Sei $T\in \B(\Hc)$ mit ONB $(e_i)$ aus Eigenvektoren. Dann: $U: \Hc \ni e_n \mapsto \delta_n \in l^2(I)$ unitär, $M_f: l^2(I) \ni g \mapsto fg \in l^2(I)$ Multiplikationsoperator mit $f\in l^\infty(I)$ gegeben via $f(i)=\lambda_i\coloneqq T(e_i)$ und $T=U^*M_f U$ ist unitär äquivalent zu Multiplikationsoperator.
+
+Aber: Es gibt Multiplikationsoperatoren auf $L^2$ ohne Eigenwerte: Betrachte $M_x \in L^2([0,1])$, dann für $\lambda\in\C$ wegen $(x-\lambda)=0$ fast überall: $x f(x) = \lambda f(x)$ impliziert $f=0$ fast überall.
+
+Ein Operator $T\in \B(\Hc)$ heißt \emph{diagonalisierbar}, falls es lokalisierbaren Maßraum $(\Omega, \Sigma, \mu)$ sowie $f\in L^\infty(\Omega, \mu)$ gibt mit $T$ unitär äquivalent zum Multiplikationsoperator $M_f$ auf $L^2(\Omega, \mu)$.
+
+\underline{Ziel}: Zeige, dass jeder normale Operator $T\in \B(\Hc)$ diagonalisierbar ist, entwickle beschränkten Funktionalkalkül für Multiplikationsoperatoren und lifte diesen auf normale Operatoren via Multiplikatordarstellung hoch.
+
+\subsubsection{$C^*$ Algebra der Multiplikationsoperatoren}
+
+Die Abbildung $L^\infty \ni f \mapsto M_f \in \B(L^2)$ ist isometrischer, einserhaltender *-Homomorphismus, also Isomorphismus auf sein Bild $\M\coloneqq \M(L^2(\Omega,\mu))=\{ M_f: f\in L^\infty \}$. Somit ist $\M$ kommutative \emph{$C^*$-Algebra der Multiplikationsoperatoren}.
+
+\subsubsection{Borel-Funktionalkalkül für Multiplikationsoperatoren}
+
+Sei $f\in L^\infty$, $K\coloneqq \essrange f = \sigma(M_f)$ kompakt, dann ist $B_b(K)$ die $C^*$-Algebra der beschränkten Borelfunktionen auf $K$. 
+
+Die Zuordnung $B_b(K) \ni g \mapsto g\circ f \in L^\infty$ ist *-Homomorphismus, aber im Allgemeinen weder injektiv (wähle $g=0$ f.ü., aber $g\neq 0$), noch surjektiv (wähle auf $[0,2]$ mit Lebesgue-Maß $f\equiv 1$ und $g=\chi_{[0,1]}$).
+
+Definiere \emph{Borel-Funktionalkalkül für $M_f$} via einserhaltendem *-Homomorphismus $B_b(\sigma(M_f)) \to L^\infty \to \B(L^2)$ und schreibe $g(M_f)$ für $M_f$ eingesetzt in $g$. 
+
+\subsubsection{Borel-Funktionalkalkül für diagonalisierbare Operatoren}
+
+Es sei $T\in \B(\Hc)$ diagonalisierbar mit $T=U^*M_f U$, dann definiert der *-Homomorphismus $B_b(K)\to L^\infty \to \M(L^2) \subset \B(L^2) \to \B(\Hc)$ mit $g\mapsto g\circ f \mapsto M_{g\circ f} \mapsto U^* M_{g\circ f} U$ den Borel-FK für $T$ und dieser setzt den stetigen FK von $T$ fort ($id(T)=T$, also stimmen stetiger FK und Borel-FK auf Polynomen überein und jene sind dicht in $C(K)$; beachte dass $\|\cdot\|_\infty$ Norm auf $B_b(K)$).
+
+\subsection{normale Operatoren sind diagonalisierbar}
+
+\subsubsection{zyklische Vektoren und invariante Teilräume}
+
+Sei $x\in \Hc$, $T\in \B(\Hc)$, $\Kc \subset \Hc$ abgeschlossen, $\A \subset \B(\Hc)$ Algebra und $\Sc \subset \B(\Hc)$ abgeschlossen unter Adjunktion.
+
+Dann heißt $x$ \emph{zyklischer Vektor für $\A$}, falls $\A x$ dicht in $\Hc$. Ferner heißt $x$ \emph{zyklischer Vektor für $T$}, falls $x$ zyklisch für $C^*(T,1)$. Es heißt $K$ \emph{invarianter Teilraum von $T$}, falls $T\Kc \subset \Kc$ und \emph{invarianter Teilraum von $\Sc$}, falls $\Kc$ invariant für alle $S\in \Sc$. 
+
+Ist $\Kc$ invariant unter $\Sc$, so auch $\Kc^\bot$ (wegen Abgeschlossenheit unter Adjunktion!) und die orthogonale Projektion $P_\Kc$ auf $\Kc$ kommutiert mit allen Elementen aus $\Sc$ (vgl. VNA: Kommutante).
+
+\subsubsection{Spektralmaß $\mu_x$}
+
+Für $f\in C(K)$ mit $f \geq 0$ ist $f(T) \geq 0$, somit $\langle f(T)x, x \rangle \geq 0$, also $C(K)\ni f \mapsto \langle f(T)x,x \rangle \in \C$ positives, stetiges Funktional auf $C(K)$.
+
+Nach Riesz-Markov existiert ein eindeutiges reguläres Borelmaß $\mu_x$ mit $\int_K f \,\mathrm{d}\mu_x = \langle f(T)x, x \rangle$. Das Maß $\mu_x$ heißt das zu $x$ gehörige \emph{Spektralmaß}.
+
+% TODO (Warum) Stimmt die Identität für B_b(K)?
+
+\subsubsection{Multiplikatordarstellung für normale Operatoren}
+
+Sei $T\in \B(\Hc)$ normal, $K\coloneqq \sigma(T)$. 
+
+Ist $x\in \Hc$ zyklischer Vektor für $T$, dann gilt für $f,g\in C(K)$: $\langle f(T)x, g(T)x \rangle = \langle f,g\rangle_{L^2}$, also $\tilde U: \Hc\ni f(T)x \mapsto f \in C(K)$ wohldefiniert und isometrisch. Da $x$ zyklisch für $T$, d.h. $\{ f(T)x: f\in C(K) \}$ dicht in $\Hc$, und $C(K)$ dicht in $L^2$, besitzt $\tilde U$ Fortsetzung zu unitärem Operator $U: \Hc \to L^2$ mit $U(x)=U(\mathrm{id}(T)x)=\mathrm{id}$ und $U^*TU=M_\mathrm{id}$.
+
+Gibt es keinen zyklischen Vektor für $T$, so zerlege $\Hc$ in direkte Summe orthogonaler, zyklischer Teilräume (Zorn!) und wende obigen Fall auf die Räume der Zerlegung an.
+
+\subsubsection{Borel-FK für normale Operatoren}
+
+Da normale Operatoren diagonalisierbar sind, kann der Borel-Funktionalkalkül für diagonalisierbare Operatoren verwendet werden.
+
+\end{document}
