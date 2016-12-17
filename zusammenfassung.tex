@@ -38,6 +38,7 @@
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\Nc}{\mathcal{N}}
 \newcommand{\F}{\mathcal{F}}
+\newcommand{\Rc}{\mathcal{R}}
 \newcommand{\norm}[1]{\|#1\|}
 \newcommand{\laplace}{\triangle}
 \newcommand{\circum}{\text{\textasciicircum}}
@@ -132,5 +133,21 @@ Gibt es keinen zyklischen Vektor für $T$, so zerlege $\Hc$ in direkte Summe ort
 \subsubsection{Borel-FK für normale Operatoren}
 
 Da normale Operatoren diagonalisierbar sind, kann der Borel-Funktionalkalkül für diagonalisierbare Operatoren verwendet werden.
+
+\subsection{Zerlegung des Spektrums}
+
+Für $T\in \B(\Hc)$ lässt sich das Spektrum $\sigma(T)$ disjunkt zerlegen als $\sigma(T)=\sigma_p(T) \cup \sigma_c(T) \cup \sigma_r(T)$. Es ist $\lambda \in \sigma_p(T)$, falls $T-\lambda$ nicht injektiv. Es ist $\lambda \in \sigma_c(T)$, falls $T-\lambda$ injektiv, nicht surjektiv, aber $\Rc(T-\lambda)$ dicht und $\lambda \in \sigma_r(T)$, falls $T-\lambda$ injektiv, nicht surjektiv und $\Rc(T-\lambda)$ nicht dicht.
+
+\subsubsection{Projektionswertiges Maß und Spektralscharen}
+
+Sei $T\in \B(\Hc)$ normal, dann definiert $\mathbb{P}: \B(\C) \ni A \mapsto \chi_{A\cap \sigma(T)}(T) \in P(\Hc)$ ein projektionswertiges Maß ($\mathbb{P}(\emptyset) = 0$, $\mathbb{P}(\C) = 1$, $\sigma$-Additivität gilt stop). Im Fall $T=T^*$ ist $\sigma(T)\subset \R$ und es reicht $\lambda \mapsto P_\lambda \coloneqq \mathbb{P}((-\infty, \lambda])$ zu betrachten, genannt \emph{Spektralschar}. Die Zuordnung $\lambda \mapsto P_\lambda$ ist monoton und rechtsseitig stop-stetig. Wir benutzen sie, um Aussagen über die Zusammensetzung des Spektrums zu zeigen.
+
+\subsubsection{Das Spektrum normaler und s.a. Operatoren}
+
+Ist $T\in \B(\Hc)$ normal, dann $\sigma_r(T)=\emptyset$, denn (O.B.d.A $\lambda=0$, sonst betrachte $\tilde A \coloneqq A-\lambda$ normal) ist $\Rc(T)$ nicht dicht, dann wegen $\Nc(T)=\Nc(T^*)$ (denn $\|Tx\|=\|T^*x\|$ für $T$ normal) folgt $\{0\} \neq \Rc(T)^\bot = \Nc(T^*) = \Nc(T)$, also $\lambda=0$ Eigenwert.
+
+Nun: $T=T^*$, dann $\lambda \mapsto P_\lambda$ auf $\sigma(T)$ strikt monoton wachsend, in $\lambda \in \sigma_c(T)$ beidseitig stop-stetig (deshalb kontinuierlich!), d.h. zusätzlich links-stop-stetig,  und mit Sprungstellen in $\lambda \in \sigma_p(T)$. Bild!
+
+Ein $\lambda\in \C$ heißt \emph{approximativer Eigenwert}, falls es Folge $(x_n)$ von Einheitsvektoren gibt mit $\|(T-\lambda)x_n\| \to 0$, insbesondere gilt für die Fourierkoeffizienten: $\langle Tx_n, x_n \rangle \to \lambda$. Das Spektrum eines normalen Operators besteht vollständig aus approximativen Eigenwerten.
 
 \end{document}
