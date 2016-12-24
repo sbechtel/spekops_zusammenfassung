@@ -35,6 +35,7 @@
 \newcommand{\Kc}{\mathcal{K}}
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathcal{B}}
+\newcommand{\Lc}{\mathcal{L}}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\Nc}{\mathcal{N}}
 \newcommand{\F}{\mathcal{F}}
@@ -75,6 +76,53 @@
 \title{Zusammenfassung Spektraltheorie und Operatoralgebren}
 \author{Sebastian Bechtel}
 \maketitle
+
+\section{Grundlegendes zu Algebren}
+
+\subsection{Beispiele von Algebren}
+
+% TODO schreiben
+
+\subsection{Elementare Eigenschaften}
+
+Sei $\A$ Banachalgebra. Dann ist die Multiplikation stetig. Hat $\A$ eine Involution und ist die C*-Eigenschaft erfüllt, so ist $\A$ eine Banach-*-Algebra: $\|x\|^2=\|x^*x\|\leq \|x^*\|\|x\|$, also $\|x\|\leq \|x^*\|$, somit $\|x\|\leq \|x^*\|\leq \|(x^*)^*\|=\|x\|$. Ist $1\in\A$, so gilt $\|1\| \geq 1$, denn $\|1\|\leq \|1\|^2$ und ist $\A$ C*-Algebra, so gilt $\|1\|=1$, denn es gilt $1^*=1$ und somit folgt die Behauptung aus $\|1\|=\|1^*1\|=\|1\|^2$.
+
+\subsection{Algebren ohne Eins}
+
+Algebren wie $L^1(\R)$ und $C_0(\R)$ haben keine Eins. Um trotzdem Spektraltheorie betreiben zu können, betten wir sie als Ideale in eine Algebra mit Eins ein.
+
+Algebraisch: $\tilde \A \coloneqq \A \times \C$ mit geeigneter Multiplikation ist Algebra mit $1_{\tilde \A} = (0,1)$ und $\A\ni x\mapsto (x,0)\in \tilde \A$ bettet $\A$ als Ideal in $\tilde \A$ ein.
+
+Banach-algebraisch: Statte $\tilde \A$ mit $l^1$ Norm der direkten Summe aus, also $\|(x,\alpha)\|_{\tilde \A} = \|x\|+|\alpha|$.
+
+C*-algebraisch: Problem: Banach-algebraische Konstruktion erhält C*-Eigenschaft im Allgemeinen nicht. Definiere deshalb andere Norm, deren Konstruktion aber bereits die C*-Eigenschaft benutzt!
+
+\subsubsection{Linksreguläre Darstellung}
+
+Betrachte den Algebrahomomorphismus $\A\ni x\mapsto L_x\in \Lc(\A)$, wobei $L_x(y)\coloneqq xy$ die \emph{Linksreguläre Darstellung} ist. Ist $\A$ C*-Algebra, dann gilt $\|L_x\|=\|x\|$, denn $\|L_x\|\geq \|xx^*\|/\|x^*\|=\|x^*\|=\|x\|$ und $\|L_x\|\leq \|x\|$ ist klar.
+
+Also: Ist $\A$ C*-Algebra, dann betrachte auf $\tilde \A$ die Norm $\|(x,\alpha)\|=\|L_x+\alpha\|_{\mathrm{op}}$. Definitheit nutzt Isometrie des Algebrahomomorphismus und die Tatsache, dass $\A$ keine Eins besitzt.
+
+\subsection{Spektraltheorie in Banachalgebren}
+
+Sei $\A$ Banachalgebra mit Eins. Für $x\in\A$ definiere durch $\rho(x)\ni \lambda \mapsto r(\lambda,x)\coloneqq (\lambda-x)^{-1}$ die \emph{Resolvente} $r(\cdot,x)$ von $x$.
+
+Ist $0\neq \lambda \in \sigma(x)$, so ist $1/\lambda \in \sigma(x^{-1})$. Auch im Fall $xy\neq yx$ stimmen deren Spektren fast überein, es gilt $\sigma(xy)\cup \{0\} = \sigma(yx)\cup \{0\}$. Hinzunahme der $0$ ist notwendig: Sei $S$ der Rechtsshift, dann $S^*S=\id$, also $0\not\in \sigma(S^*S)$, aber $SS^*$ nicht injektiv. Ist $\|x\|< 1$, dann ist $1-x$ invertierbar und die Inverse ist gegeben durch die \emph{Neumann-Reihe} $\sum_{n=0}^\infty x^n$, vgl. geometrische Reihe! Die Resolventenmenge ist offen, also $\sigma(x)$ abgeschlossen, außerdem gilt für den \emph{Spektralradius} $r_\sigma(x)\coloneqq \sup \{ |\lambda|: \lambda \in \sigma(x) \}$ die Abschätzung $r_\sigma(x) \leq \|x\|$, also ist das Spektrum $\sigma(x)$ kompakt. Es gilt $\lim_{|\lambda|\to \infty} r(\lambda,x)=0$, vgl. mit Resolventenabschätzungen für H.G.en, z.B. $\|r(\lambda,A)\|\leq M/|\lambda|$ für Generatoren von analytischen H.G.en. Die Resolvente ist holomorph (leite Potenzreihenentwicklung aus Neumann-Reihe ab). Es folgt $\sigma(x)\neq \emptyset$: Wäre $\sigma(x)$ leer, dann wäre die Resolvente eine ganze Funktion. Wegen dem Grenzverhalten für $|\lambda|\to \infty$ folgt Beschränktheit, also nach Liouville $r(\lambda,x)\equiv 0$, aber $0$ ist nicht invertierbar, Widerspruch.
+
+\subsection{Der Satz von Gelfand-Mazur}
+
+Ist $\A$ Banachalgebra mit Eins und jedes $x\neq 0$ sei invertierbar (genannt \emph{Divisionsalgebra}), dann gilt $\A\cong \C$. Bew: Identifiziere $x$ eindeutig mit einem Skalar: Aus $\sigma(x)\neq\emptyset$ folgt die Existenz eines $\lambda$ mit $\lambda-x$ nicht invertierbar, also nach Voraussetzung $x=\lambda$.
+
+\section{Gelfandtheorie}
+
+Ist $E$ normierter Raum, so ist $K\coloneqq (E')_1$ eine schwach-*-kompakte Menge und $E\ni x \mapsto \hat x \in C(K)$ ein isometrischer Isomorphismus von normierten Räumen, wobei $K$ also kompakter Hausdorffraum ist. Für eine kommutative, unitale Banachalgebra $\A$ ist aber $C(K)$ keine Algebra, denn im Allgemeinen gilt $(\hat x \hat y)(\varphi)=\varphi(x)\varphi(y)\neq\varphi(xy)=\widehat{xy}(\varphi)$ (sofern $\varphi$ keine multiplikative Linearform ist, z.B. das Integral auf $L^1([0,1])$).
+
+Ansatz: Schränke $K$ ein, sodass Multiplikativität erfüllt ist!
+
+Wir definieren das \emph{Spektrum der Algebra} via $\hat \A \coloneqq \{ \varphi \in \A^*: \varphi\neq 0, \varphi \text{ multiplikativ} \}$. Dies ist der Kandidat für die Einschränkung. Wir benötigen $\varphi\neq 0$, da sonst $\hat 1$ keine Eins in $C(\hat \A)$ sein kann, denn es gilt $\hat 1(0)=0(1)=0$.
+
+Ist $\varphi\in \hat\A$ und $\A$ unital, so gilt $\varphi(1)=1$, denn $\varphi(1)=\varphi(1)^2$ und $\varphi(1)=0$ impliziert $\varphi=0$. Außerdem gilt $\|\varphi\| \leq 1$, insbesondere $\hat\A \subseteq (E^*)_1$ (Banach-Alaoglu!). Aus $\varphi(x)=\lambda$ folgt $\lambda \in \sigma(x)$, denn dann gilt $\varphi(\lambda-x)=0$ und wegen Multiplikativität und $\varphi(1)$ kann dann $\lambda$ nicht in der Resolventenmenge sein. Daraus folgt dann $|\varphi(x)|\leq r_\sigma(x)\leq \|x\|$.
+
 
 \section{Spektraltheorie in $\B(\Hc)$}
 
