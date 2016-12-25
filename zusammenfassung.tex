@@ -123,6 +123,25 @@ Wir definieren das \emph{Spektrum der Algebra} via $\hat \A \coloneqq \{ \varphi
 
 Ist $\varphi\in \hat\A$ und $\A$ unital, so gilt $\varphi(1)=1$, denn $\varphi(1)=\varphi(1)^2$ und $\varphi(1)=0$ impliziert $\varphi=0$. Außerdem gilt $\|\varphi\| \leq 1$, insbesondere $\hat\A \subseteq (E^*)_1$ (Banach-Alaoglu!). Aus $\varphi(x)=\lambda$ folgt $\lambda \in \sigma(x)$, denn dann gilt $\varphi(\lambda-x)=0$ und wegen Multiplikativität und $\varphi(1)$ kann dann $\lambda$ nicht in der Resolventenmenge sein. Daraus folgt dann $|\varphi(x)|\leq r_\sigma(x)\leq \|x\|$.
 
+\subsection{topologische Eigenschaften von $\hat\A$}
+
+Ist $\A$ unital, so ist $\hat\A$ kompakt, denn Multiplikativität wird automatisch erhalten und wegen $\varphi(1)=1$ ist der Grenzwert nicht $0$. Ansonsten gilt $\hat{\tilde\A} \cong \hat \A \cup \{\varphi_\infty\}$, also ist $\hat{\tilde\A}$ die Einpunktkompaktifizierung von $\hat\A$ und somit lokalkompakt.
+
+\subsection{Idealtheorie in $\A$}
+
+Ernte der Idealtheorie wird sein, dass wir $\|\hat x\|=r_\sigma(x)$ erhalten. Dazu werden wir nutzen, dass nicht invertierbare Elemente in echten, maximalen Idealen enthalten sind, die wiederum zu den Kernen von Elementen in $\hat \A$ korrespondieren.
+
+Ist $\A$ Banachalgebra mit Eins, dann ist der Abschluss eines echten (zweiseitigen) Ideals wieder ein echtes Ideal, nutze, dass, falls $I$ dicht, $1\in \A$ impliziert, dass es $y\in I$ gibt mit $\|1-y\| < 1$, also $y$ invertierbar und somit $1\in I$, Widerspruch. Z.B. ist $\F(\Hc) \subset \B(\Hc)$ echtes Ideal und $\overline{\F(\Hc)}=\Kc(\Hc)$ ebenso. Ohne Eins gilt dies nicht, z.B. $C_c(\R) \subset C_0(\R)$ echtes Ideal, aber dicht. Maximale Ideale sind abgeschlossen, denn sonst wäre der Abschluss ein echtes Ideal, dass größer ist, und nach Zorn ist jedes Ideal in einem abgeschlossenen, maximalen Ideal enthalten (ohne Eins mit gleichem Beispiel wie oben falsch). 
+
+Für $\A$ unital, kommutativ ist $x$ nicht invertierbar genau dann, wenn $x$ in einem echten, abgeschlossenen Ideal enthalten ist. Ist $x$ invertierbar, so kann es nicht in einem echten Ideal enthalten sein, da sonst $1=xx^{-1}$ im Ideal wäre. Andererseits ist wegen Kommutativität $x\A=\A x$ zweiseitiges Ideal und wegen $1\in \A$ gilt $x\in x\A$.
+
+Es gilt \emph{der Satz, der die Theorie zum Laufen bringt}: Für ein echtes Ideal $I$ ist Maximalität äquivalent zu $\A/I\cong \C$: Ist $I$ maximal, so enthält $\A/I$ keine echten Ideale, also ist $\A/I$ Divsionsalgebra und nach Gelfand-Mazur isomorph zu $\C$. Die Abbildung $\hat \A \ni \varphi \mapsto \Nc(\varphi) \in M(\A)$ ist Bijektion ($M(\A)$ bezeichne die echten, maximalen Ideala von $\A$). 
+
+\underline{In Summe}: Es gilt für $x\in \A$, dass $\lambda\in\sigma(x)$ genau dann, wenn es $\varphi\in\hat\A$ gibt mit $\varphi(x)=\lambda$, denn: $\lambda\in\sigma(x)$ gdw. $\lambda-x$ nicht invertierbar gdw. es echtes, maximales Ideal $I$ gibt mit $\lambda-x\in I$ gdw. es ex. $\varphi \in \hat \A$ mit $\lambda-x \in \Nc(\varphi)$ gdw. es ex. $\varphi \in \hat \A$ mit $\varphi(x)=\lambda$. 
+
+\subsection{Der Satz von Gelfand}
+
+Ist $\A$ kommutative Banachalgebra, $K\coloneqq \hat \A$, dann ist $\A\ni x \mapsto \hat x \in C_0(K)$ kontraktiver Algebrahomomorphismus und heißt \emph{Gelfand-Transformation}. $K$ ist lokalkompakt und genau dann kompakt, wenn $\A$ unital. Es gilt $\sigma(x)=\hat x(\hat \A)$ und somit $\|\hat x\|_\infty = r_\sigma(x)$.
 
 \section{Spektraltheorie in $\B(\Hc)$}
 
