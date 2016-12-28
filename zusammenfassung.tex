@@ -107,7 +107,7 @@ Also: Ist $\A$ C*-Algebra, dann betrachte auf $\tilde \A$ die Norm $\|(x,\alpha)
 
 Sei $\A$ Banachalgebra mit Eins. Für $x\in\A$ definiere durch $\rho(x)\ni \lambda \mapsto r(\lambda,x)\coloneqq (\lambda-x)^{-1}$ die \emph{Resolvente} $r(\cdot,x)$ von $x$.
 
-Ist $0\neq \lambda \in \sigma(x)$, so ist $1/\lambda \in \sigma(x^{-1})$. Auch im Fall $xy\neq yx$ stimmen deren Spektren fast überein, es gilt $\sigma(xy)\cup \{0\} = \sigma(yx)\cup \{0\}$. Hinzunahme der $0$ ist notwendig: Sei $S$ der Rechtsshift, dann $S^*S=\id$, also $0\not\in \sigma(S^*S)$, aber $SS^*$ nicht injektiv. Ist $\|x\|< 1$, dann ist $1-x$ invertierbar und die Inverse ist gegeben durch die \emph{Neumann-Reihe} $\sum_{n=0}^\infty x^n$, vgl. geometrische Reihe! Die Resolventenmenge ist offen, also $\sigma(x)$ abgeschlossen, außerdem gilt für den \emph{Spektralradius} $r_\sigma(x)\coloneqq \sup \{ |\lambda|: \lambda \in \sigma(x) \}$ die Abschätzung $r_\sigma(x) \leq \|x\|$, also ist das Spektrum $\sigma(x)$ kompakt. Es gilt $\lim_{|\lambda|\to \infty} r(\lambda,x)=0$, vgl. mit Resolventenabschätzungen für H.G.en, z.B. $\|r(\lambda,A)\|\leq M/|\lambda|$ für Generatoren von analytischen H.G.en. Die Resolvente ist holomorph (leite Potenzreihenentwicklung aus Neumann-Reihe ab). Es folgt $\sigma(x)\neq \emptyset$: Wäre $\sigma(x)$ leer, dann wäre die Resolvente eine ganze Funktion. Wegen dem Grenzverhalten für $|\lambda|\to \infty$ folgt Beschränktheit, also nach Liouville $r(\lambda,x)\equiv 0$, aber $0$ ist nicht invertierbar, Widerspruch.
+Ist $0\neq \lambda \in \sigma(x)$, so ist $1/\lambda \in \sigma(x^{-1})$. Auch im Fall $xy\neq yx$ stimmen deren Spektren fast überein, es gilt $\sigma(xy)\cup \{0\} = \sigma(yx)\cup \{0\}$. Hinzunahme der $0$ ist notwendig: Sei $S$ der Rechtsshift, dann $S^*S=\id$, also $0\not\in \sigma(S^*S)$, aber $SS^*$ nicht injektiv. Ist $\|x\|< 1$, dann ist $1-x$ invertierbar und die Inverse ist gegeben durch die \emph{Neumann-Reihe} $\sum_{n=0}^\infty x^n$, vgl. geometrische Reihe! Die Resolventenmenge ist offen, also $\sigma(x)$ abgeschlossen, außerdem gilt für den \emph{Spektralradius} $r_\sigma(x)\coloneqq \sup \{ |\lambda|: \lambda \in \sigma(x) \}$ die Abschätzung $r_\sigma(x) \leq \|x\|$, also ist das Spektrum $\sigma(x)$ kompakt. Es gilt $\lim_{|\lambda|\to \infty} r(\lambda,x)=0$, vgl. mit Resolventenabschätzungen für H.G.en, z.B. $\|r(\lambda,A)\|\leq M/|\lambda|$ für Generatoren von analytischen H.G.en. Die Resolvente ist holomorph (leite Potenzreihenentwicklung aus Neumann-Reihe ab). Es folgt $\sigma(x)\neq \emptyset$: Wäre $\sigma(x)$ leer, dann wäre die Resolvente eine ganze Funktion. Wegen dem Grenzverhalten für $|\lambda|\to \infty$ folgt Beschränktheit, also nach Liouville $r(\lambda,x)\equiv 0$, aber $0$ ist nicht invertierbar, Widerspruch. Ist $\A$ Banach-*-Algebra, so gilt $\sigma(x*)=\overline{\sigma(x)}$, nutze dazu $1^*=1$.
 
 \subsection{Der Satz von Gelfand-Mazur}
 
@@ -142,6 +142,38 @@ Es gilt \emph{der Satz, der die Theorie zum Laufen bringt}: Für ein echtes Idea
 \subsection{Der Satz von Gelfand}
 
 Ist $\A$ kommutative Banachalgebra, $K\coloneqq \hat \A$, dann ist $\A\ni x \mapsto \hat x \in C_0(K)$ kontraktiver Algebrahomomorphismus und heißt \emph{Gelfand-Transformation}. $K$ ist lokalkompakt und genau dann kompakt, wenn $\A$ unital. Es gilt $\sigma(x)=\hat x(\hat \A)$ und somit $\|\hat x\|_\infty = r_\sigma(x)$.
+
+\subsection{Anwendung: Satz von Wiener}
+
+Betrachte die Banachalgebra $(l^1(\Z),*,\|\cdot\|_1)$. Diese hat das Einselement $\delta_0$ und es gilt $\delta_k = \delta_0^k$, somit sind Elemente aus $\hat \A$ durch ihren Wert auf $\delta_0$ eindeutig festgelegt. Für $\alpha \in \mathbb{T}$ definiere $\varphi_\alpha: l^1(\Z) \ni \sum_n f(n) \delta_n \mapsto \sum_n \alpha^n f(n) \in \C$, dann ist $\mathbb{T} \ni \alpha \mapsto \varphi_\alpha \in \hat \A$ ein Homöomorphismus, $\mathbb{T} \cong \hat \A$. Die Gelfand-Transformation ist die diskrete Fouriertransformation (ersetze $\alpha$ durch $e^{i\psi}$ in der Darstellung von $\varphi_\alpha$) und das Bild $\omega$ heißt \emph{Wiener-Algebra} (ausgestattet mit $\|g\|_\mathrm{W} \coloneqq \|\check g\|_{l^1(\Z)}$ anstatt Supremumsnorm).
+
+% TODO Satz von Wiener nicht ganz klar. Was ist f, was ist \hat f? Vgl. Wikipedia!
+
+\section{Spektraltheorie in C*-Algebren}
+
+Ist $x$ s.a., so gilt $\sigma(x)\subset \R$. Ist $x$ unitär, so gilt $\sigma(x)\subset \mathbb T$.
+
+Für $x$ normal gilt $\|x^2\|=\|x\|^2$, via Darstellung des Spektralradius folgt $\|x\|=r_\sigma(x)$ und für allgemeines $x$ gilt $\|x\|=r_\sigma(x^*x)^{1/2}$ (vgl. Spektralnorm von Matrizen).
+
+\underline{Also}: Verknüpfung zwischen Topologie (Norm) und Algebra (Spektralradius)! Somit gibt es auf einer *-Algebra höchstens eine C*-Norm.
+
+Ist $\B$ Banach-*-Algebra, $\A$ C*-Algebra und $\pi: \B \to \A$ ein *-Homomorphismus, so ist $\pi$ stetig mit $\|\pi\| \leq 1$ (algebraische Eigenschaft \enquote{schenkt} topologische Eigenschaft der Stetigkeit!). Beweisidee: Durch Übergang zu $\tilde \B$ und $\A_\mathrm{red}\coloneqq \pi(1)\tilde \A \pi(1)$ (vgl. vNA Reduktion von Algebren) ist $\pi$ oBdA einserhaltender *-Homomorphismus, $x$ invertierbar in $\B$ impliziert $\pi(x)$ invertierbar in $\A$, dann $\|\pi(x)\| \leq \|x\|$ via Abschätzung der Spektralradien.
+
+\subsection{Gelfandtheorie für C*-Algebren}
+
+Ist $\A$ unitale, kommutative C*-Algebra, so ist jedes Element insbesondere normal, also $\|\hat x\| = r_\sigma(x) = \|x\|$, also Bild des Gelfand-Homomorphismus abgeschlossene Unteralgebra stetiger Funktionen auf $\hat \A$, die die Eins erhält (wegen $\varphi(1)=1$ für $\varphi\in\hat \A$) und Punkte trennt ($\varphi\neq \psi \in \hat \A$, dann ex $x\in \A$ mit $\varphi(x)\neq \psi(x)$, also $\hat x(\varphi)\neq \hat x(\psi)$), somit nach Stone-Weierstraß $\{ \hat x: x\in \A \} = C(\hat \A)$, also $\A \cong C(\hat \A)$. Hat $\A$ keine Eins, dann $\A \cong C_0(\hat \A)$, $\hat \A$ lokalkompakt.
+
+\subsubsection{Satz von Banach-Stone}
+
+Für kompakte Hausdorffräume $X,Y$ gilt: $X\cong Y$ gdw. $C(X)\cong C(Y)$, nenne daher die Untersuchung von C*-Algebren auch nichtkommutative Topologie. Beweisidee: Zeige $C(\hat \A)=\A=C(X)$ impliziert $\hat \A \cong X$. Setze $\varphi_x(f)=f(x)$, dann zeige $X\ni x\mapsto \varphi_x \in \hat \A$ ist Homöomorphismus. Stetig und injektiv leicht. Surjektivität durch Widerspruchsbeweis: Erhalte nichttriviale Funktion aus Urysohn, die ein Urbild unter dem Gelfand-Homomorphismus in $C(X)$ hat, die trivial ist (Bild!).
+
+\subsection{Spektralsatz und stetiger Funktionalkalkül}
+
+Sei $x\in \A$ normal, $\A$ unital, dann ist die von $x$ und $1$ erzeugte C*-Algebre $C^*(x,1)$ kommutativ, also isomorph zu einer Algebra $C(\Omega)$ mit $\Omega$ kompakt. Es gilt $\Omega \cong \sigma(x)$ (via $\varphi \mapsto \hat x(\varphi) \in \sigma(x)$), somit $C^*(x,1)\cong C(\sigma(x))$ und der Isomorphismus ist durch $i(x)=\id$ eindeutig bestimmt (festgelegt auf Polynomen, diese sind dicht wegen Weierstraß).
+
+Für $f\in C(\sigma(x))$ definiere stetigen Funktionalkalkül via $f(x) \coloneqq i^{-1}(f)$. Da $i$ isometrischer *-Isomorphismus, gilt $(f+g)(x)=f(x)+g(x), (fg)(x)=f(x)g(x), (\bar f)(x)=(f(x))^*, \|f(x)\|=\|f\|$. Es gilt $\sigma(f(x))=f(\sigma(x))$, denn $\sigma(f)=\Rc(f)$.
+
+Anwendung: Ist $x\in \A$ s.a., definiere $e^{ix}\in \A$ unitär. Ist $x \geq 0$, definiere $x^{1/2}$.
 
 \section{Spektraltheorie in $\B(\Hc)$}
 
