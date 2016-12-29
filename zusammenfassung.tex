@@ -143,6 +143,10 @@ Es gilt \emph{der Satz, der die Theorie zum Laufen bringt}: Für ein echtes Idea
 
 Ist $\A$ kommutative Banachalgebra, $K\coloneqq \hat \A$, dann ist $\A\ni x \mapsto \hat x \in C_0(K)$ kontraktiver Algebrahomomorphismus und heißt \emph{Gelfand-Transformation}. $K$ ist lokalkompakt und genau dann kompakt, wenn $\A$ unital. Es gilt $\sigma(x)=\hat x(\hat \A)$ und somit $\|\hat x\|_\infty = r_\sigma(x)$.
 
+\subsection{Beispiel: Ideale und Spektrum einer nichtkommutativen Algebra (Ü.A. 13)}
+
+Betrachte die nichtkommutative *-Algebra $\A$ der $n\times n$-Matrizen. Diese besitzt nichttriviale Links- und Rechtsideale (mit Nullzeile bzw. mit Nullspalte), aber keine nichttrivialen zweiseitigen Ideale (sonst forme $M\neq 0$ zu Matrixeinheit um und erhalte $1_\mathcal{A} \in I$). Daher ist $\hat \A = \emptyset$, denn sonst würde der Kern ein nichttriviales zweiseitiges Ideal liefern.
+
 \subsection{Anwendung: Satz von Wiener}
 
 Betrachte die Banachalgebra $(l^1(\Z),*,\|\cdot\|_1)$. Diese hat das Einselement $\delta_0$ und es gilt $\delta_k = \delta_0^k$, somit sind Elemente aus $\hat \A$ durch ihren Wert auf $\delta_0$ eindeutig festgelegt. Für $\alpha \in \mathbb{T}$ definiere $\varphi_\alpha: l^1(\Z) \ni \sum_n f(n) \delta_n \mapsto \sum_n \alpha^n f(n) \in \C$, dann ist $\mathbb{T} \ni \alpha \mapsto \varphi_\alpha \in \hat \A$ ein Homöomorphismus, $\mathbb{T} \cong \hat \A$. Die Gelfand-Transformation ist die diskrete Fouriertransformation (ersetze $\alpha$ durch $e^{i\psi}$ in der Darstellung von $\varphi_\alpha$) und das Bild $\omega$ heißt \emph{Wiener-Algebra} (ausgestattet mit $\|g\|_\mathrm{W} \coloneqq \|\check g\|_{l^1(\Z)}$ anstatt Supremumsnorm).
