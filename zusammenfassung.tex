@@ -243,6 +243,10 @@ Dann heißt $x$ \emph{zyklischer Vektor für $\A$}, falls $\A x$ dicht in $\Hc$.
 
 Ist $\Kc$ invariant unter $\Sc$, so auch $\Kc^\bot$ (wegen Abgeschlossenheit unter Adjunktion!) und die orthogonale Projektion $P_\Kc$ auf $\Kc$ kommutiert mit allen Elementen aus $\Sc$ (vgl. VNA: Kommutante).
 
+\subsubsection{zyklische Vektoren von Matrizen (Ü.A. 40)}
+
+Sei $T$ eine s.a. Matrix. Dann besitzt $T$ genau dann eine zyklischen Vektor, wenn die Eigenwerte von $0$ verschieden und einfach sind. Man zeigt $\Rc(T)\neq \C^n$ und wegen $\Rc(T^k) \subset \Rc(T)$ folgt dann, dass $\{T^k\eta: k\geq 0\}$ für kein $\eta$ total sein kann. Nutze dazu $\Rc(T)=\Nc(T)^\bot\neq \C^n$ im Fall $\lambda = 0$ und $\dim(\Rc(TP_\lambda^\bot))\leq \dim(E_\lambda) \leq n-2$ für einen mehrfachen Eigenwert $\lambda$.
+
 \subsubsection{Spektralmaß $\mu_x$}
 
 Für $f\in C(K)$ mit $f \geq 0$ ist $f(T) \geq 0$, somit $\langle f(T)x, x \rangle \geq 0$, also $C(K)\ni f \mapsto \langle f(T)x,x \rangle \in \C$ positives, stetiges Funktional auf $C(K)$.
@@ -250,6 +254,11 @@ Für $f\in C(K)$ mit $f \geq 0$ ist $f(T) \geq 0$, somit $\langle f(T)x, x \rang
 Nach Riesz-Markov existiert ein eindeutiges reguläres Borelmaß $\mu_x$ mit $\int_K f \,\mathrm{d}\mu_x = \langle f(T)x, x \rangle$. Das Maß $\mu_x$ heißt das zu $x$ gehörige \emph{Spektralmaß}.
 
 % TODO (Warum) Stimmt die Identität für B_b(K)?
+
+\subsubsection{Beispiel eines Spektralmaßes (Ü.A. 36)}
+
+Betrachte zu $\left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ den zyklischen Vektor $(1,0)$. Es gilt $K\coloneqq \sigma(R)=\{0, 2\}$. Wegen $\|(1,0)\|^2=1$ gilt $\mu(K)=1$ und wegen $$0=\langle \left(\begin{smallmatrix} 0 \\ 1 \end{smallmatrix}\right), \left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right) \rangle=\langle \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)\left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right), \left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right) \rangle=\int_K x \, \mathrm{dx}=\mu(\{1\})-\mu(\{-1\})$$ folgt $\mu(\{1\})=\mu(\{-1\})=1/2$.
+
 
 \subsubsection{Multiplikatordarstellung für normale Operatoren}
 
