@@ -35,6 +35,7 @@
 \newcommand{\Kc}{\mathcal{K}}
 \newcommand{\A}{\mathcal{A}}
 \newcommand{\B}{\mathcal{B}}
+\newcommand{\G}{\mathcal{G}}
 \newcommand{\Lc}{\mathcal{L}}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\Nc}{\mathcal{N}}
@@ -291,5 +292,21 @@ Ist $T\in \B(\Hc)$ normal, dann $\sigma_r(T)=\emptyset$, denn (O.B.d.A $\lambda=
 Nun: $T=T^*$, dann $\lambda \mapsto P_\lambda$ auf $\sigma(T)$ strikt monoton wachsend, in $\lambda \in \sigma_c(T)$ beidseitig stop-stetig (deshalb kontinuierlich!), d.h. zusätzlich links-stop-stetig,  und mit Sprungstellen in $\lambda \in \sigma_p(T)$. Bild!
 
 Ein $\lambda\in \C$ heißt \emph{approximativer Eigenwert}, falls es Folge $(x_n)$ von Einheitsvektoren gibt mit $\|(T-\lambda)x_n\| \to 0$, insbesondere gilt für die Fourierkoeffizienten: $\langle Tx_n, x_n \rangle \to \lambda$. Das Spektrum eines normalen Operators besteht vollständig aus approximativen Eigenwerten.
+
+\section{unbeschränkte Operatoren}
+
+\subsection{Begriffsbildung}
+
+Ein unbeschränkter Operator auf $\Hc$ ist ein Operator $T:\Hc \supset D(T) \to \Hc$, der nicht notwendigerweise beschränkt sein muss. Beispiele: Sei $\Hc\coloneqq L^2([0,1])$.  1) $T_1\coloneqq M_{\id}$, $g\coloneqq \chi_{[1,\infty)} x^{-1}$, dann $g\in \Hc$, aber $T_1g\not\in \Hc$, also $g\not\in D(T_1)$. Definiert man $g_n$ wie $g$ mit $n$ statt $\infty$, so zeigt die Folge die Unbeschränktheit.  2) $T_2\coloneqq -i \frac{d}{dx}$, erstmal nur sinnvoll definiert für differenzierbare Funktionen und $e_n\coloneqq e^{inx}$ zeigt Unbeschränktheit: $\|e_n\|=1$, aber $\|T_2 e_n\|=n$. Mit $D(T_2)\coloneqq \{f\in C^1([0,1]): f(0)=f(1) \}$ ist $T_2$ (ebenso wie $T_1$) symmetrisch ($\langle Tx,y\rangle = \langle x, Ty \rangle$ für $x,y\in D(T)$). Verbindung: Hellinger-Töplitz!
+
+Es bezeichne $\G(T)$ den Graphen von $T$. Statte $\G(T)$ mit $1$-oder $2$-direkter Summennorm aus. Auf $D(T)$ definiere die \emph{Graphennorm} $\|x\|_T \coloneqq \|(x,Tx)\|_{\G(T)}$. Dann ist $T: (D(T), \|\cdot\|_T) \to \Hc$ stetig.
+
+Definiere Ordnung auf den unbeschränkten Operatoren via $T_1 \subset T_2$, falls $D(T_1)\subset D(T_2)$ und $T_2|_{D(T_1)} = T_1$. Daraus ergeben sich die Begriffe \emph{Fortsetzung} und \emph{Einschränkung}.
+
+Für zwei Operatoren $S,T$ definiere die Summe $S+T$ mit $D(S+T)=D(S)\cap D(T)$ und die Komposition $ST$ mit $D(ST)=\{x\in D(T): Tx\in D(S)\}$. Die unbeschränkten Operatoren bilden keine Algebra (nicht mal einen V.R.) aufgrund der Problematik der Definitionsbereiche (einfache Funktionen und nicht-konstante Polynome bilden dichte T.R. von $L^2([0,1])$ mit trivialem Schnitt).
+
+Ein Operator $T$ heißt \emph{abgeschlossen}, falls sein Graph abgeschlossen ist, also $x_n\to x$ und $Tx_n\to y$ impliziert $x\in D(T)$ und $Tx=y$. Äquivalent dazu ist: $(\G(T),\|\cdot\|_{\G(T)})$ bzw. $(D(T), \|\cdot\|_T)$ ist B.R.
+
+Eine Teilmenge $\G \subset \Hc \oplus \Kc$ ist genau dann Graph eines Operators, falls aus $(0,y)\in \G$ stets $y=0$ folgt ($Tx=y$ für $(x,y)\in \G$ definiert auf $\{x\in \Hc: \text{ es ex } y\in \Kc \text{ mit } (x,y)\in \G\}$ einen linearen Operator). Es sind äquivalent, dass $\overline{\G(T)}$ Graph eines Operators $\overline{T}$ ist, dass $T$ eine abgeschlossene Fortsetzung besitzt und dass $\overline{\G(T)}$ kein Element der Form $(0,y)$ mit $y\neq 0$ enthält. Ein solcher Operator heißt \emph{abschließbar} und die kleinste abgeschlossene Fortsetzung $\overline{T}$ heißt \emph{Abschluss} von $T$. Beispiele: 1) $f\in L^2$, betrachte Multiplikationsoperator $M_f$ auf maximalem Definitionsbereich $D$. Dann ist $M_f$ abgeschlossen. 2) Der Ableitungsoperator $P\coloneqq -i \frac{d}{dx}: L^2(\R) \supset C_c^\infty(\R)$ ist abschließbar, denn $\F P\F^{-1} = M_{\id}$ ist abschließbar. Man kann $H^1(\R)$ daher auch als Definitionsbereich von $\overline{P}$ definieren. 3) $T_\delta: L^2(\R) \supset C_c(\R) \ni f \mapsto f(0) \in \C$ ist nicht abschließbar: Nutze Hutfunktionen mit $f(1)=1$, aber $f\to 0$ in $L^2$.
 
 \end{document}
