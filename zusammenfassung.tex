@@ -309,4 +309,22 @@ Ein Operator $T$ heißt \emph{abgeschlossen}, falls sein Graph abgeschlossen ist
 
 Eine Teilmenge $\G \subset \Hc \oplus \Kc$ ist genau dann Graph eines Operators, falls aus $(0,y)\in \G$ stets $y=0$ folgt ($Tx=y$ für $(x,y)\in \G$ definiert auf $\{x\in \Hc: \text{ es ex } y\in \Kc \text{ mit } (x,y)\in \G\}$ einen linearen Operator). Es sind äquivalent, dass $\overline{\G(T)}$ Graph eines Operators $\overline{T}$ ist, dass $T$ eine abgeschlossene Fortsetzung besitzt und dass $\overline{\G(T)}$ kein Element der Form $(0,y)$ mit $y\neq 0$ enthält. Ein solcher Operator heißt \emph{abschließbar} und die kleinste abgeschlossene Fortsetzung $\overline{T}$ heißt \emph{Abschluss} von $T$. Beispiele: 1) $f\in L^2$, betrachte Multiplikationsoperator $M_f$ auf maximalem Definitionsbereich $D$. Dann ist $M_f$ abgeschlossen. 2) Der Ableitungsoperator $P\coloneqq -i \frac{d}{dx}: L^2(\R) \supset C_c^\infty(\R)$ ist abschließbar, denn $\F P\F^{-1} = M_{\id}$ ist abschließbar. Man kann $H^1(\R)$ daher auch als Definitionsbereich von $\overline{P}$ definieren. 3) $T_\delta: L^2(\R) \supset C_c(\R) \ni f \mapsto f(0) \in \C$ ist nicht abschließbar: Nutze Hutfunktionen mit $f(1)=1$, aber $f\to 0$ in $L^2$.
 
+\subsection{Adjungierte}
+
+Zu $T:\Hc \supset D \to \Kc$ d.d. wollen wir die Adjungierte definieren. Es soll $\langle Tx,y \rangle = \langle x, T^*y \rangle$ für $x\in D$ und $y\in D^*\coloneqq D(T^*)$ gelten. Sofern $x\mapsto \langle Tx, y \rangle$ stetige LF (auf $\Hc$ wegen d.d.) ist (da $T$ unbeschränkt, ist dies nicht für alle $y$ der Fall), liefert R.F. $T^*x\coloneqq z$ wobei $\langle Tx,y \rangle = \langle x, z \rangle$ gilt. Man nennt $T^*$ die \emph{Adjungierte} von $T$. Ist $T: \Hc \supset D \to \Hc$ und $T \subset T^*$, dann heißt $T$ \emph{symmetrisch} und gilt $T^*=T$, so heißt $T$ \emph{selbstadjungiert}. 
+
+Beispiel: Sei $f\in L^2$, dann $M_f$ Multiplikationsoperator. Es ist $M_{\overline{f}}: L^2 \supset D \to L^2$ die Adjungierte von $M_f$ (egal auf welchem Def.-Bereich). Ist $f$ reell, so ist $M_f$ sicher symmetrisch und ist $M_f$ auf $D$ definiert, dann auch s.a.
+
+Folgender blauer Werkzeugkasten (Hauptsatz) steht zur Verfügung: Ist $T_0 \subset T$, dann $T^* \subset T_0^*$, denn für $y\in D(T^*)$ ist $x\mapsto \langle T_0 x, y \rangle = \langle Tx, y\rangle = \langle x, T^* y \rangle$ stetige LF. Für den unitären Operator $U: \Hc \otimes \Kc \ni x \otimes y \mapsto y \otimes -x \in \Kc \otimes \Hc$ gilt: $\G(T^*) = (U\G(T))^\perp$, somit ist $T^*$ insbesondere abgeschlossen. Es ist $T$ genau dann abschließbar, wenn $T^*$ d.d. (nutze $0\otimes z \in \overline{\G(T)}$ gdw. $z\in D(T^*)^\perp$ und Kriterium für Abschließbarkeit). Ist $T$ abschließbar, so gilt $\overline{T} = T^{**}$ (nachrechnen) und $T^* = \overline{T}^*$, denn $T^*=\overline{T^*}=T^{***}=\overline{T}^*$.
+
+Beispiel (Reed, Simon, VIII Beispiel 8): Sei $f$ beschränkt, messbar, aber $f\not\in L^2(\R)$ und $g\in L^2(\R)$. Definiere $T\varphi \coloneqq \langle \varphi, f \rangle g$ auf $D(T)\coloneqq \{ \varphi\in L^2(\R): f\varphi \in L^1(\R) \}$. Da $f$ beschränkt, folgt $C_c(\R) \subset D(T)$, also $T$ d.d. Für $\psi \in D(T^*)$ gilt dann $T^*\psi = \langle \psi, g \rangle f$ und da $f\not \in L^2$, folgt $D(T^*) \subset \{ g \}^\perp$, somit $T^*$ nicht d.d. und somit $T$ nicht abschließbar. Leichteres Beispiel für nicht abschließbaren Operator, aber zwischen verschiedenen Hilberträumen: Punktauswertung, nutze Hutfunktionen, die in $L^2$ gegen $0$ gehen.
+
+\subsubsection{Hauptkriterium}
+
+Ist $T$ d.d., abg. und symmetrisch, so sind äquivalent: 1) $T$ s.a. 2) $\Nc(T^*\pm i)=\{0\}$ 3) $\Rc(T\pm i)$ dicht in $\Hc$ 4) $\Rc(T\pm i)=\Hc$. In 1) bis 3) sind immer beide Vorzeichen gefordert (da man $\Nc(T\pm i)=\Rc(T^*\mp i)^\perp$ benutzen möchte). Man nutzt im Beweis, dass wegen $T$ symmetrisch die Identität $\|(T\pm i)x\|^2=\|x\|_T$ gilt. Kriterium 3) ist gut zum Nachweis geeignet, da man hierzu nicht die Adjungierte kennen muss.
+
+\subsubsection{Beispiele zur Nutzung des Hauptkriteriums}
+
+% TODO hinzufügen
+
 \end{document}
