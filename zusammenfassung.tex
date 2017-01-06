@@ -327,4 +327,22 @@ Ist $T$ d.d., abg. und symmetrisch, so sind äquivalent: 1) $T$ s.a. 2) $\Nc(T^*
 
 % TODO hinzufügen
 
+\subsection{Spektraltheorie unbeschränkter Operatoren}
+
+Wir wollen den Spektralsatz und Funktionalkalkül von $\B(\Hc)$ hochziehen. Wir beschränken uns auf den s.a. Fall, obwohl das Resultat auch für normale Operatoren gilt. Um unsere bisherigen Resultate zu verwenden, werden wir einen unbeschränkten s.a. Operator via Cayley-Transformation in einen beschränkten Operator überführen.
+
+Für nicht abgeschlossene Operatoren ist $\sigma(T)=\emptyset$, also betrachte nur abgeschlossene Operatoren. Dann sind Spektrum, Resolvente usw. wie gewohnt definiert. Ein d.d. und abg. Operator $T$ ist genau dann beschränkt invertierbar, wenn es $T^*$ ist, insbesondere gilt $\sigma(T^*)=\overline{\sigma(T)}$ (Beweis: nachrechnen, zeige $(T^*)^{-1}=(T^{-1})^*$ via $\langle (T^{-1})^*T^*x,y \rangle = \langle x, y \rangle$ für $x\in D(T^*), y\in \Hc$ und umgekehrte Reihenfolge).
+
+Ist $T$ d.d., abg., symmetrisch, so sind s.a. und $\sigma(T)\subset \R$ äquivalent: Nutze das Hauptkriterium! Ist $T$ nicht s.a., so ist $i$ oder $-i$ Eigenwert, also $\sigma(T) \not\subset \R$. Ist $T$ s.a. und $\lambda=\alpha + i\beta$ mit $\beta\neq 0$, so gilt $T-\lambda = \beta(\frac{T-\alpha}{\beta}-i)$ (hier braucht man $\beta\neq 0$!), $\frac{T-\alpha}{\beta}$ s.a., also bijektiv (und damit beschränkt invertierbar!), also $\lambda \not\in \sigma(T)$.
+
+\subsubsection{Cayley-Transformation}
+
+Definiere die Cayley-Abbildung $c: \C\setminus \{-i\} \ni z \mapsto \frac{z-i}{z+i} \in \C\setminus \{1\}$. Diese ist bijektiv und bildet $\R$ auf $\mathbb{T} \setminus \{1\}$ ab. Weitere Werte: $z(0)=-1, z(1)=-i, z(-1)=i$ sowie $\lim_{x\to \pm \infty} c(x) = 1$ (Skizze für die Wirkung auf der oberen Halbebene siehe Wikipedia). Für s.a. $T$ definiere $U_T\coloneqq (T-i)(T+i)^{-1}$ (vgl. Cayley-Abbildung!). Es ist $U_T$ unitär (nutze $\|(T+i)x\|=\|(T-i)x\|$, vgl. Beweis Hauptkriterium für Selbstadjungiertheit). Aus $T_1\neq T_2$ folgt $U_{T_1}\neq U_{T_2}$ (vgl. Ü.A., nutze, dass $T$ aus $U_T$ rekonstruierbar ist, nutze $1-U_T$ bijektiv). Es gilt $\lambda\in \sigma(T)$ gdw. $c(\lambda)\in \sigma(U_T)$. Ist $\sigma(T)=\R$, so folgt (weil $\sigma(U_T)$ abgeschlossen), dass $1\in \sigma(U_T)$, aber $1$ ist kein Eigenwert von $U_T$ (wichtig für den Spektralsatz!).
+
+\subsubsection{Spektralsatz und Funktionalkalkül}
+
+Es ist äquivalent, dass $T$ s.a. ist und dass $T$ unitär äquivalent zu einem Multiplikationsoperator $M_f$ (aber hier nicht notwendigerweise $f\in L^\infty$!) mit $f$ reell ist. Rückrichtung ist klar. Aus dem Spektralsatz für normale, beschränkte Operatoren erhalte $V^*U_TV=M_u$ (denn $U_T$ ist beschränkt und wegen unitär auch normal) und es gilt $\Rc(u)\subset \mathbb T$ wegen $u$ unitär. Da $1\not\in \sigma_p(T)$, gilt $\mu(\{\omega\in \Omega: u(\omega)=1\})=0$ (sonst entsprechende charakteristische Funktion Eigenvektor), also $u(\omega)\in D(c^{-1})$ fast überall. Setze $f(\omega)\coloneqq c^{-1}(u(\omega))$, dann $\Rc(f) \subset \R$, also $f$ reell und $M_u$ ist Cayley-Transformation von $M_f$ (nachrechnen, nutze $M_f-i=M_{f-i}$ usw.), also $U_T$ Cayley-Trafo von $V^*M_fV$ (nachrechnen, schreibe $i=V^*iV$), aber auch von $T$, also wegen Eindeutigkeit $T=V^*M_fV$.
+
+Für $T=V^*M_fV$ und $g:\sigma(T)\to \C$ messbar (nicht notwendigerweise beschränkt!) definiere Funktionalkalkül via $g(T)=V^*M_{g\circ f}V$.
+
 \end{document}
