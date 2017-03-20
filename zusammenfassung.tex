@@ -226,13 +226,13 @@ Die Abbildung $L^\infty \ni f \mapsto M_f \in \B(L^2)$ ist isometrischer, einser
 
 Sei $f\in L^\infty$, $K\coloneqq \essrange f = \sigma(M_f)$ kompakt, dann ist $B_b(K)$ die $C^*$-Algebra der beschränkten Borelfunktionen auf $K$. 
 
-Die Zuordnung $B_b(K) \ni g \mapsto g\circ f \in L^\infty$ ist *-Homomorphismus, aber im Allgemeinen weder injektiv (wähle $g=0$ f.ü., aber $g\neq 0$), noch surjektiv (wähle auf $[0,2]$ mit Lebesgue-Maß $f\equiv 1$ und $g=\chi_{[0,1]}$).
+Die Zuordnung $B_b(K) \ni g \mapsto g\circ f \in L^\infty$ ist *-Homomorphismus, aber im Allgemeinen weder injektiv (wähle auf $[0,1]$ zu $f=\id$ ein $g=0$ f.ü., aber $g\neq 0$), noch surjektiv (wähle auf $[0,2]$ mit Lebesgue-Maß $f\equiv 1$ und $g=\chi_{[0,1]}$).
 
 Definiere \emph{Borel-Funktionalkalkül für $M_f$} via einserhaltendem *-Homomorphismus $B_b(\sigma(M_f)) \to L^\infty \to \B(L^2)$ und schreibe $g(M_f)$ für $M_f$ eingesetzt in $g$. 
 
 \subsubsection{Borel-Funktionalkalkül für diagonalisierbare Operatoren}
 
-Es sei $T\in \B(\Hc)$ diagonalisierbar mit $T=U^*M_f U$, dann definiert der *-Homomorphismus $B_b(K)\to L^\infty \to \M(L^2) \subset \B(L^2) \to \B(\Hc)$ mit $g\mapsto g\circ f \mapsto M_{g\circ f} \mapsto U^* M_{g\circ f} U$ den Borel-FK für $T$ und dieser setzt den stetigen FK von $T$ fort ($id(T)=T$, also stimmen stetiger FK und Borel-FK auf Polynomen überein und jene sind dicht in $C(K)$; beachte dass $\|\cdot\|_\infty$ Norm auf $B_b(K)$).
+Es sei $T\in \B(\Hc)$ diagonalisierbar mit $T=U^*M_f U$, dann definiert der *-Homomorphismus $B_b(K)\to L^\infty \to \M(L^2) \subset \B(L^2) \to \B(\Hc)$ mit $g\mapsto g\circ f \mapsto M_{g\circ f} \mapsto U^* M_{g\circ f} U$ den Borel-FK für $T$ und dieser setzt den stetigen FK von $T$ fort ($\id(T)=T$, also stimmen stetiger FK und Borel-FK auf Polynomen überein und jene sind dicht in $C(K)$; beachte dass $\|\cdot\|_\infty$ Norm auf $B_b(K)$).
 
 \subsection{normale Operatoren sind diagonalisierbar}
 
@@ -242,11 +242,11 @@ Sei $x\in \Hc$, $T\in \B(\Hc)$, $\Kc \subset \Hc$ abgeschlossen, $\A \subset \B(
 
 Dann heißt $x$ \emph{zyklischer Vektor für $\A$}, falls $\A x$ dicht in $\Hc$. Ferner heißt $x$ \emph{zyklischer Vektor für $T$}, falls $x$ zyklisch für $C^*(T,1)$. Es heißt $K$ \emph{invarianter Teilraum von $T$}, falls $T\Kc \subset \Kc$ und \emph{invarianter Teilraum von $\Sc$}, falls $\Kc$ invariant für alle $S\in \Sc$. 
 
-Ist $\Kc$ invariant unter $\Sc$, so auch $\Kc^\bot$ (wegen Abgeschlossenheit unter Adjunktion!) und die orthogonale Projektion $P_\Kc$ auf $\Kc$ kommutiert mit allen Elementen aus $\Sc$ (vgl. VNA: Kommutante).
+Ist $\Kc$ invariant unter $\Sc$, so auch $\Kc^\bot$ (wegen Abgeschlossenheit unter Adjunktion!) und die orthogonale Projektion $P_\Kc$ auf $\Kc$ kommutiert mit allen Elementen aus $\Sc$ (vgl. VNA Kommutante: $\Kc$ invarianter Teilraum gdw. $P_\Kc\in \Sc'$).
 
 \subsubsection{zyklische Vektoren von Matrizen (Ü.A. 40)}
 
-Sei $T$ eine s.a. Matrix. Dann besitzt $T$ genau dann eine zyklischen Vektor, wenn die Eigenwerte von $0$ verschieden und einfach sind. Man zeigt $\Rc(T)\neq \C^n$ und wegen $\Rc(T^k) \subset \Rc(T)$ folgt dann, dass $\{T^k\eta: k\geq 0\}$ für kein $\eta$ total sein kann. Nutze dazu $\Rc(T)=\Nc(T)^\bot\neq \C^n$ im Fall $\lambda = 0$ und $\dim(\Rc(TP_\lambda^\bot))\leq \dim(E_\lambda) \leq n-2$ für einen mehrfachen Eigenwert $\lambda$.
+Sei $T$ eine s.a. Matrix. Dann besitzt $T$ genau dann eine zyklischen Vektor, wenn die Eigenwerte von $0$ verschieden und einfach sind. Man zeigt $\Rc(T)\neq \C^n$ und wegen $\Rc(T^k) \subset \Rc(T)$ folgt dann, dass $\{T^k\eta: k\geq 0\}$ für kein $\eta$ total sein kann. Nutze dazu $\Rc(T)=\Nc(T)^\bot\neq \C^n$ im Fall $\lambda = 0$ und $\dim(\Rc(TP_\lambda^\bot))\leq \dim(E_\lambda) \leq n-2$ für einen mehrfachen Eigenwert $\lambda$. Umgekehrt ist $\xi=\eta_1+\dots+\eta_n$ für $(\eta_i)$ ONB aus nicht-entarteten Eigenvektoren zu Eigenwerten ungleich Null ein zyklischer Vektor (zeige induktiv $\eta_i$ und $\eta_{i+1}+\dots+\eta_n$ liegen im Abschluss der erzeugten Algebra).
 
 \subsubsection{Spektralmaß $\mu_x$}
 
@@ -258,14 +258,14 @@ Nach Riesz-Markov existiert ein eindeutiges reguläres Borelmaß $\mu_x$ mit $\i
 
 \subsubsection{Beispiel eines Spektralmaßes (Ü.A. 36)}
 
-Betrachte zu $\left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ den zyklischen Vektor $(1,0)$. Es gilt $K\coloneqq \sigma(R)=\{0, 2\}$. Wegen $\|(1,0)\|^2=1$ gilt $\mu(K)=1$ und wegen $$0=\langle \left(\begin{smallmatrix} 0 \\ 1 \end{smallmatrix}\right), \left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right) \rangle=\langle \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)\left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right), \left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right) \rangle=\int_K x \, \mathrm{dx}=\mu(\{1\})-\mu(\{-1\})$$ folgt $\mu(\{1\})=\mu(\{-1\})=1/2$.
+Betrachte zu $R=\left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$ den zyklischen Vektor $(1,0)$. Es gilt $K\coloneqq \sigma(R)=\{-1, 1\}$. Wegen $\|(1,0)\|^2=1$ gilt $\mu(K)=1$ und wegen $$0=\langle \left(\begin{smallmatrix} 0 \\ 1 \end{smallmatrix}\right), \left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right) \rangle=\langle \left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)\left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right), \left(\begin{smallmatrix} 1 \\ 0 \end{smallmatrix}\right) \rangle=\int_K x \, \mathrm{dx}=\mu(\{1\})-\mu(\{-1\})$$ folgt $\mu(\{1\})=\mu(\{-1\})=1/2$.
 
 
 \subsubsection{Multiplikatordarstellung für normale Operatoren}
 
-Sei $T\in \B(\Hc)$ normal, $K\coloneqq \sigma(T)$. 
+Sei $T\in \B(\Hc)$ normal, $K\coloneqq \sigma(T)$, $x\in \Hc$ zyklisch für $T$. 
 
-Ist $x\in \Hc$ zyklischer Vektor für $T$, dann gilt für $f,g\in C(K)$: $\langle f(T)x, g(T)x \rangle = \langle f,g\rangle_{L^2}$, also $\tilde U: \Hc\ni f(T)x \mapsto f \in C(K)$ wohldefiniert und isometrisch. Da $x$ zyklisch für $T$, d.h. $\{ f(T)x: f\in C(K) \}$ dicht in $\Hc$, und $C(K)$ dicht in $L^2$, besitzt $\tilde U$ Fortsetzung zu unitärem Operator $U: \Hc \to L^2$ mit $U(x)=U(\mathrm{id}(T)x)=\mathrm{id}$ und $U^*TU=M_\mathrm{id}$.
+Es gilt für $f,g\in C(K)$: $\langle f(T)x, g(T)x \rangle = \langle f,g\rangle_{L^2}$, also $\tilde U: \Hc\ni f(T)x \mapsto f \in C(K)$ wohldefiniert und isometrisch. Da $x$ zyklisch für $T$, d.h. $\{ f(T)x: f\in C(K) \}$ dicht in $\Hc$, und $C(K)$ dicht in $L^2$, besitzt $\tilde U$ Fortsetzung zu unitärem Operator $U: \Hc \to L^2$ mit $U(x)=U(1(T)x)=1$ und $U^*TU=M_\mathrm{id}$.
 
 Gibt es keinen zyklischen Vektor für $T$, so zerlege $\Hc$ in direkte Summe orthogonaler, zyklischer Teilräume (Zorn!) und wende obigen Fall auf die Räume der Zerlegung an.
 
