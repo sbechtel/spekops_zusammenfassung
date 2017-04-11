@@ -71,6 +71,7 @@
 \DeclareMathOperator{\loc}{loc}
 \DeclareMathOperator{\pv}{pv}
 \DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\Spur}{Spur}
 
 \begin{document}
 
@@ -344,5 +345,43 @@ Definiere die Cayley-Abbildung $c: \C\setminus \{-i\} \ni z \mapsto \frac{z-i}{z
 Es ist äquivalent, dass $T$ s.a. ist und dass $T$ unitär äquivalent zu einem Multiplikationsoperator $M_f$ (aber hier nicht notwendigerweise $f\in L^\infty$!) mit $f$ reell ist. Rückrichtung ist klar. Aus dem Spektralsatz für normale, beschränkte Operatoren erhalte $V^*U_TV=M_u$ (denn $U_T$ ist beschränkt und wegen unitär auch normal) und es gilt $\Rc(u)\subset \mathbb T$ wegen $u$ unitär. Da $1\not\in \sigma_p(U_T)$, gilt $\mu(\{\omega\in \Omega: u(\omega)=1\})=0$ (sonst entsprechende charakteristische Funktion Eigenvektor), also $u(\omega)\in D(c^{-1})$ fast überall. Setze $f(\omega)\coloneqq c^{-1}(u(\omega))$, dann $\Rc(f) \subset \R$, also $f$ reell und $M_u$ ist Cayley-Transformation von $M_f$ (nachrechnen, nutze $M_f-i=M_{f-i}$ usw.), also $U_T$ Cayley-Trafo von $V^*M_fV$ (nachrechnen, schreibe $i=V^*iV$), aber auch von $T$, also wegen Eindeutigkeit $T=V^*M_fV$.
 
 Für $T=V^*M_fV$ und $g:\sigma(T)\to \C$ messbar (nicht notwendigerweise beschränkt!) definiere Funktionalkalkül via $g(T)=V^*M_{g\circ f}V$.
+
+\section{Darstellungstheorie von C*-Algebren}
+
+Ein *-Homomorphismus $\pi: \A\to \B(\Hc)$ heißt Darstellung von $\A$ auf $\Hc$. Wir werden sehen, dass jeder Zustand auf $\A$ eine Darstellung induziert und die Summe all jener Darstellungen ein Isomorphismus auf eine Unteralgebra von $\B(\Hc)$ liefert, also abstrakte C*-Algebren und konkrete C*-Algebren die gleiche Theorie liefern.
+
+Sei $\varphi$ positives lineares Funktional auf $\A$. Dann ist $\varphi$ stetig. Ist $\A$ unital, so ist $\varphi$ genau dann positiv, wenn $\varphi(1)=\|\varphi\|$ und im Allgemeinen ist $\varphi$ genau dann positiv, wenn $\varphi(u_\lambda)\to \|\varphi\|$, wobei $u_\lambda$ die kanonische approximative Eins. Ist $\|\varphi\|=1$, so heißt $\varphi$ \emph{Zustand}. Ist $\A$ unital, so ist der Zustandsraum schwach-*-kompakt, konvex (wird also von seinen Extremalpunkten, den \emph{reinen Zuständen}, erzeugt), ansonsten muss er nicht abgeschlossen sein (betrachte $\A=\mathrm{C}_0(\R)$, dann für $n\geq 0$ ist $\delta_n$ Zustand und $\delta_n \to 0$).
+
+\subsection{Beispiel: Zustände auf $\mathrm{M}_n$ (ÜA 58)}
+
+Es ist $\Spur: \mathrm{M}_n \to \R$ positives, lineares, treues Funktional. $\mathrm{M}_n\times \mathrm{M}_n\ni (x,y)\mapsto \Spur(y^*x)$ ist Skalarprodukt, also gibt es isometrischen Isomorphismus $\mathrm{M}_n^*\ni \varphi \mapsto \Phi \in \mathrm{M}_n$ mit $\varphi(x)=\Spur(\Phi x)$. Es heißt $\Phi$ \emph{Dichtematrix}. Es ist $\varphi$ genau dann selbstadjungiert/positiv, wenn es $\Phi$ ist. Also sind die Zustände genau jene, die von positiv-semidefiniten Matrizen mit $\|\Phi\|=1$ induziert werden. Ein Zustand ist genau dann rein, wenn er von einer eindimensionalen Projektion induziert wird. Jeder Zustand ist Konvexkombination von $n$ reinen Zuständen: Seien $\lambda_i$ die Eigenwerte zu den Eigenvektoren $v_i$, dann $\sum_i \lambda_i = 1$ wegen $\Spur(\Phi)=\varphi(1)=\|\varphi\|=1$ und $\Phi = \sum_i \lambda_i \mathrm{t}_{v_i,v_i}$ ist Konvexkombination reiner Zustände.
+
+\subsection{Es gibt viele Zustände}
+
+Ist $\B \subset \A$ C*-Unteralgebra und $\varphi$ Zustand auf $\B$, so gibt es Fortsetzung zu Zustand $\tilde \varphi$ auf $\A$ (nutze Hahn-Banach und $\tilde \varphi$ positiv genau dann, wenn $\tilde\varphi(1)=\|\tilde\varphi\|=\|\varphi\|=\varphi(1)$). Zu $x$ s.a.\ gibt es Zustand $\varphi$ mit $\varphi(x)=\|x\|$ (auf $\mathrm{C}^*(1,x)$ gibt es $\lambda$ mit $\hat x(\lambda)=\|x\|$, Punktauswertung in $\lambda$ ist entsprechender Zustand auf $\mathrm{C}^*(1,x)$, setze zu Zustand auf $\A$ fort). Somit trennt der Zustandsraum Punkte von $\A$.
+
+\subsection{Homomorphiesatz}
+
+Wie bereits angedeutet wollen wir zu Zuständen Darstellungen konstruieren. Da wir viele Zustände haben, wir die Summe der Darstellungen zu allen Zuständen isometrisch. Nun brauchen wir noch einen Homomorphiesatz, sodass unsere Algebra auch tatsächlich isomorph zum Bild unter der isometrischen Darstellung ist.
+
+Durch $\Lambda=\{ x\in \A: \|x\|\leq 1, x\geq 0\}$ ist eine gerichtete Menge gegeben und $u_\lambda\coloneqq \lambda$ ist Netz mit $\lim_\lambda u_\lambda x=x=\lim_\lambda xu_\lambda$, also approximative Eins. Damit lässt sich zeigen, dass $\A/J$ für ein abgeschlossenes zweiseitiges Ideal $J$ eine C*-Algebra ist. Ist $\pi$ Homomorphismus, so gilt dann $\A/\ker \pi \cong \pi(\A)$.
+
+\subsection{GNS-Konstruktion und universelle Darstellung}
+
+Sei $\A$ C*-Algebra und $\varphi$ Zustand auf $\A$. Dann ist $\A\times \A\ni (x,y)\mapsto \varphi(y^*x)$ semi-Skalarprodukt. Es ist $\Nc=\{x\in \A: \varphi(x^*x)=0\}$ Linksideal (nutze Cauchy-Schwartz, deshalb ist Reihenfolge in $y^*x$ relevant!). Dann ist $\A/\Nc$ Prähilbertraum, setze $\Hc\coloneqq \Hc_\varphi \coloneqq (\A/\Nc)^{\sim}$.
+
+Die linksreguläre Darstellung $\pi(a)[x]_\varphi=[ax]_\varphi$ ist wohldefiniert, da $\Nc$ Linksideal. 
+
+Falls $\A$ unital, so ist $\xi=[1]_\varphi$ zyklischer Vektor mit $\varphi(x)=\langle x\xi, \xi \rangle$, ansonsten ist $[u_\lambda]$ Cauchy-Netz und Grenzwert $\xi$ ist jener zyklische Vektor.
+
+Die Darstellung ist bis auf unitäre Äquivalenz eindeutig (es ist $\pi(x)\xi \mapsto \pi_1(x)\xi_1$ isometrisch, daher wohldefiniert, und kann, da $\xi$ zyklisch ist, zu unitärer Abbildung fortgesetzt werden).
+
+Zu $x\in \A$ existiert Zustand $\varphi$ mit $\varphi(x^*x)=\|x\|^2$, es folgt $\|\pi_\varphi(x)\|=\|x\|$, also $\sum_{\varphi\in \mathcal{S}(\A)} \pi_\varphi$ ist isometrische Darstellung von $\A$ auf $\B(\sum_{\varphi\in \mathcal{S}(\A)} \Hc_\varphi)$ und heißt \emph{universelle Darstellung}, schreibe $\pi_\mathrm{u}$. Ist $\pi$ Darstellung mit zyklischem Einheitsvektor $\xi$, so ist diese Darstellung unitär äquivalent zur GNS-Darstellung zum Zustand $\varphi(x)=\langle x\xi, \xi\rangle$, also unitär äquivalent zu Unterdarstellung von $\pi_\mathrm{u}$. Jede n.d.\ Darstellung ist Summe von solchen zyklischen Darstellungen, also ist jede n.d.\ Darstellung modulo Vielfachheit Unterdarstellung von $\pi_\mathrm{u}$.
+
+\subsection{Beispiel: GNS-Darstellung von $\mathrm{M}_n$ (Ü.A. 2 vNA)}
+
+Auf $\mathrm{M}_n$ definiert $\tau(x)=\frac{1}{n} \Spur(x^*x)$ den \emph{Spurzustand}. Es ist $\Hc=\mathrm{M}_n$ und $\E_{ij}=\sqrt{n} e_{ij}$ ist ONB\@. Schreibe $\Hc=\sum_{i=1}^n \C^n$, dann ist die Linksreguläre Darstellung $\pi(x)$ durch $\left(\begin{smallmatrix} x & & \\ & \ddots & \\ & & x \end{smallmatrix}\right)$ gegeben.
+
+Dies lässt sich auch in Tensorschreibeweise ausdrücken: $\Hc = \C^n\otimes \C^n$, $\pi(x)=x\otimes 1_{\C^n}$ und $\xi=\frac{1}{\sqrt{n}} \sum_{i=1}^n e_i\otimes e_i$.
 
 \end{document}
