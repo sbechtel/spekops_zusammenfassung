@@ -151,6 +151,10 @@ Die Gelfand-Transformation ist im Allgemeinen weder injektiv noch surjektiv: Die
 
 Betrachte die nichtkommutative *-Algebra $\A$ der $n\times n$-Matrizen. Diese besitzt nichttriviale Links- und Rechtsideale (mit Nullzeile bzw.\ mit Nullspalte), aber keine nichttrivialen zweiseitigen Ideale (sonst forme $M\neq 0$ zu Matrixeinheit um und erhalte $1_\mathcal{A} \in I$). Daher ist $\hat \A = \emptyset$, denn sonst würde der Kern ein nichttriviales zweiseitiges Ideal liefern.
 
+\subsection{Beispiel: nicht halbeinfache kommutative, unitale Banachalgebra (Ü.A. 16)}
+
+Sei $x\neq 0$ eine nilpotente $n\times n$-Matrix und $\A$ die erzeugte unitale, kommutative Banachalgebra. Für $\varphi\in \hat \A$ gilt $\varphi(x)=0$, denn $\varphi(x)^n=\varphi(x^n)=\varphi(0)=0$, also gilt für $y=\sum_{i=0}^{n-1} a_i x^i$ die Identität $\varphi(y)=a_0$, somit $\hat \A$ Einpunktmenge und das Radikal ist gegeben durch $\{ y\in \A: a_0=0\}$.
+
 \subsection{Anwendung: Satz von Wiener}
 
 Betrachte die Banachalgebra $(l^1(\Z),*,\|\cdot\|_1)$. Diese hat das Einselement $\delta_0$ und es gilt $\delta_k = \delta_0^k$, somit sind Elemente aus $\hat \A$ durch ihren Wert auf $\delta_0$ eindeutig festgelegt. Für $\alpha \in \mathbb{T}$ definiere $\varphi_\alpha: l^1(\Z) \ni \sum_n f(n) \delta_n \mapsto \sum_n \alpha^n f(n) \in \C$, dann ist $\mathbb{T} \ni \alpha \mapsto \varphi_\alpha \in \hat \A$ ein Homöomorphismus, $\mathbb{T} \cong \hat \A$. Die Gelfand-Transformation ist die diskrete Fouriertransformation (ersetze $\alpha$ durch $e^{i\psi}$ in der Darstellung von $\varphi_\alpha$) und das Bild $\omega$ heißt \emph{Wiener-Algebra} (ausgestattet mit $\|g\|_\mathrm{W} \coloneqq \|\check g\|_{l^1(\Z)}$ anstatt Supremumsnorm).
@@ -382,7 +386,7 @@ Zu $x\in \A$ existiert Zustand $\varphi$ mit $\varphi(x^*x)=\|x\|^2$, es folgt $
 
 \subsection{Beispiel: GNS-Darstellung von $\mathrm{M}_n$ (Ü.A. 2 vNA)}
 
-Auf $\mathrm{M}_n$ definiert $\tau(x)=\frac{1}{n} \Spur(x^*x)$ den \emph{Spurzustand}. Es ist $\Hc=\mathrm{M}_n$ und $\E_{ij}=\sqrt{n} e_{ij}$ ist ONB\@. Schreibe $\Hc=\sum_{i=1}^n \C^n$, dann ist die Linksreguläre Darstellung $\pi(x)$ durch $\left(\begin{smallmatrix} x & & \\ & \ddots & \\ & & x \end{smallmatrix}\right)$ gegeben.
+Auf $\mathrm{M}_n$ definiert $\tau(x)=\frac{1}{n} \Spur(x)$ den \emph{Spurzustand}. Es ist $\Hc=\mathrm{M}_n$ und $\E_{ij}=\sqrt{n} e_{ij}$ ist ONB\@. Schreibe $\Hc=\oplus_{i=1}^n \C^n$, dann ist die Linksreguläre Darstellung $\pi(x)$ durch $\left(\begin{smallmatrix} x & & \\ & \ddots & \\ & & x \end{smallmatrix}\right)$ gegeben.
 
 Dies lässt sich auch in Tensorschreibeweise ausdrücken: $\Hc = \C^n\otimes \C^n$, $\pi(x)=x\otimes 1_{\C^n}$ und $\xi=\frac{1}{\sqrt{n}} \sum_{i=1}^n e_i\otimes e_i$.
 
