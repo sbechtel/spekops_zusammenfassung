@@ -137,17 +137,19 @@ Ist $\A$ Banachalgebra mit Eins, dann ist der Abschluss eines echten (zweiseitig
 
 Für $\A$ unital, kommutativ ist $x$ nicht invertierbar genau dann, wenn $x$ in einem echten, abgeschlossenen Ideal enthalten ist. Ist $x$ invertierbar, so kann es nicht in einem echten Ideal enthalten sein, da sonst $1=xx^{-1}$ im Ideal wäre. Andererseits ist wegen Kommutativität $x\A=\A x$ zweiseitiges Ideal, $1\not\in\A$, da $x$ nicht invertierbar und wegen $1\in \A$ gilt $x\in x\A$.
 
-Es gilt \emph{der Satz, der die Theorie zum Laufen bringt}: Für ein echtes Ideal $I$ ist Maximalität äquivalent zu $\A/I\cong \C$: Ist $I$ maximal, so enthält $\A/I$ keine echten Ideale, also ist $\A/I$ Divisionsalgebra und nach Gelfand-Mazur isomorph zu $\C$. Die Abbildung $\hat \A \ni \varphi \mapsto \Nc(\varphi) \in M(\A)$ ist Bijektion ($M(\A)$ bezeichne die echten, maximalen Ideala von $\A$). 
+Es gilt \emph{der Satz, der die Theorie zum Laufen bringt}: Für ein echtes Ideal $I$ ist Maximalität äquivalent zu $\A/I\cong \C$: Ist $I$ maximal, so enthält $\A/I$ keine echten Ideale, also ist $\A/I$ Divisionsalgebra und nach Gelfand-Mazur isomorph zu $\C$. Die Abbildung $\hat \A \ni \varphi \mapsto \Nc(\varphi) \in M(\A)$ ist Bijektion ($M(\A)$ bezeichne die echten, maximalen Ideale von $\A$). 
 
-\underline{In Summe}: Es gilt für $x\in \A$, dass $\lambda\in\sigma(x)$ genau dann, wenn es $\varphi\in\hat\A$ gibt mit $\varphi(x)=\lambda$, denn: $\lambda\in\sigma(x)$ gdw. $\lambda-x$ nicht invertierbar gdw. es echtes, maximales Ideal $I$ gibt mit $\lambda-x\in I$ gdw. es ex. $\varphi \in \hat \A$ mit $\lambda-x \in \Nc(\varphi)$ gdw. es ex. $\varphi \in \hat \A$ mit $\varphi(x)=\lambda$. 
+\underline{In Summe}: Es gilt für $x\in \A$, dass $\lambda\in\sigma(x)$ genau dann, wenn es $\varphi\in\hat\A$ gibt mit $\varphi(x)=\lambda$, denn: $\lambda\in\sigma(x)$ gdw.\ $\lambda-x$ nicht invertierbar gdw.\ es echtes, maximales Ideal $I$ gibt mit $\lambda-x\in I$ gdw.\ es ex.\ $\varphi \in \hat \A$ mit $\lambda-x \in \Nc(\varphi)$ gdw.\ es ex.\ $\varphi \in \hat \A$ mit $\varphi(x)=\lambda$. 
 
 \subsection{Der Satz von Gelfand}
 
-Ist $\A$ kommutative Banachalgebra, $K\coloneqq \hat \A$, dann ist $\A\ni x \mapsto \hat x \in C_0(K)$ kontraktiver Algebrahomomorphismus und heißt \emph{Gelfand-Transformation}. $K$ ist lokalkompakt und genau dann kompakt, wenn $\A$ unital. Es gilt $\sigma(x)=\hat x(\hat \A)$ und somit $\|\hat x\|_\infty = r_\sigma(x)$.
+Ist $\A$ kommutative Banachalgebra, $K\coloneqq \hat \A$, dann ist $\A\ni x \mapsto \hat x \in C_0(K)$ kontraktiver Algebrahomomorphismus und heißt \emph{Gelfand-Transformation}. $K$ ist lokalkompakt und genau dann kompakt, wenn $\A$ unital. Es gilt $\sigma(x)=\hat x(\hat \A)$ und somit $\|\hat x\|_\infty = r_\sigma(x)$. 
+
+Die Gelfand-Transformation ist im Allgemeinen weder injektiv noch surjektiv: Die Algebra $\{\left(\begin{smallmatrix} a & b \\ 0 & a \end{smallmatrix}\right): a,b\in \C\}$ hat als einziges nicht-triviales, echtes Ideal $\C \cdot \left(\begin{smallmatrix} 0 & c \\ 0 & 0 \end{smallmatrix}\right)$, also ist dieses das einzige maximale Ideal und somit das Radikal, also ist der Gelfand-Homomorphismus nicht injektiv. Das Bild des Gelfand-Homomorphismus von $\ell^1(\Z)$ ist die Wiener-Algebra, also nicht surjektiv (sonst wäre diese Algebra nicht kompliziert ;)).
 
 \subsection{Beispiel: Ideale und Spektrum einer nichtkommutativen Algebra (Ü.A. 13)}
 
-Betrachte die nichtkommutative *-Algebra $\A$ der $n\times n$-Matrizen. Diese besitzt nichttriviale Links- und Rechtsideale (mit Nullzeile bzw. mit Nullspalte), aber keine nichttrivialen zweiseitigen Ideale (sonst forme $M\neq 0$ zu Matrixeinheit um und erhalte $1_\mathcal{A} \in I$). Daher ist $\hat \A = \emptyset$, denn sonst würde der Kern ein nichttriviales zweiseitiges Ideal liefern.
+Betrachte die nichtkommutative *-Algebra $\A$ der $n\times n$-Matrizen. Diese besitzt nichttriviale Links- und Rechtsideale (mit Nullzeile bzw.\ mit Nullspalte), aber keine nichttrivialen zweiseitigen Ideale (sonst forme $M\neq 0$ zu Matrixeinheit um und erhalte $1_\mathcal{A} \in I$). Daher ist $\hat \A = \emptyset$, denn sonst würde der Kern ein nichttriviales zweiseitiges Ideal liefern.
 
 \subsection{Anwendung: Satz von Wiener}
 
@@ -163,7 +165,7 @@ Für $x$ normal gilt $\|x^2\|=\|x\|^2$, via Darstellung des Spektralradius folgt
 
 \underline{Also}: Verknüpfung zwischen Topologie (Norm) und Algebra (Spektralradius)! Somit gibt es auf einer *-Algebra höchstens eine C*-Norm.
 
-Ist $\B$ Banach-*-Algebra, $\A$ C*-Algebra und $\pi: \B \to \A$ ein *-Homomorphismus, so ist $\pi$ stetig mit $\|\pi\| \leq 1$ (algebraische Eigenschaft \enquote{schenkt} topologische Eigenschaft der Stetigkeit!). Beweisidee: Durch Übergang zu $\tilde \B$ und $\A_\mathrm{red}\coloneqq \pi(1)\tilde \A \pi(1)$ (vgl. vNA Reduktion von Algebren) ist $\pi$ oBdA einserhaltender *-Homomorphismus, $x$ invertierbar in $\B$ impliziert $\pi(x)$ invertierbar in $\A$, dann $\|\pi(x)\| \leq \|x\|$ via Abschätzung der Spektralradien.
+Ist $\B$ Banach-*-Algebra, $\A$ C*-Algebra und $\pi: \B \to \A$ ein *-Homomorphismus, so ist $\pi$ stetig mit $\|\pi\| \leq 1$ (algebraische Eigenschaft \enquote{schenkt} topologische Eigenschaft der Stetigkeit!). Beweisidee: Durch Übergang zu $\tilde \B$ und $\A_\mathrm{red}\coloneqq \pi(1)\tilde \A \pi(1)$ (vgl.\ vNA Reduktion von Algebren) ist $\pi$ oBdA einserhaltender *-Homomorphismus, $x$ invertierbar in $\B$ impliziert $\pi(x)$ invertierbar in $\A$, dann $\|\pi(x)\| \leq \|x\|$ via Abschätzung der Spektralradien.
 
 \subsection{Gelfandtheorie für C*-Algebren}
 
@@ -171,11 +173,11 @@ Ist $\A$ unitale, kommutative C*-Algebra, so ist jedes Element insbesondere norm
 
 \subsubsection{Satz von Banach-Stone}
 
-Für kompakte Hausdorffräume $X,Y$ gilt: $X\cong Y$ gdw. $C(X)\cong C(Y)$, nenne daher die Untersuchung von C*-Algebren auch nichtkommutative Topologie. Beweisidee: Zeige $C(\hat \A)=\A=C(X)$ impliziert $\hat \A \cong X$. Setze $\varphi_x(f)=f(x)$, dann zeige $X\ni x\mapsto \varphi_x \in \hat \A$ ist Homöomorphismus. Stetig und injektiv leicht. Surjektivität durch Widerspruchsbeweis: Erhalte nichttriviale Funktion aus Urysohn, die ein Urbild unter dem Gelfand-Homomorphismus in $C(X)$ hat, die trivial ist (Bild!).
+Für kompakte Hausdorffräume $X,Y$ gilt: $X\cong Y$ gdw. $C(X)\cong C(Y)$, nenne daher die Untersuchung von C*-Algebren auch nichtkommutative Topologie. Beweisidee: Zeige $C\left(\widehat{C(X)}\right)\cong C(X)$ impliziert $\widehat{C(X)} \cong X$. Setze $\varphi_x(f)=f(x)$, dann zeige $X\ni x\mapsto \varphi_x \in \widehat{C(X)}$ ist Homöomorphismus. Stetig und injektiv leicht. Surjektivität durch Widerspruchsbeweis: Erhalte nichttriviale Funktion aus Urysohn, die ein Urbild unter dem Gelfand-Homomorphismus in $C(X)$ hat, die trivial ist (Bild!).
 
 \subsection{Spektralsatz und stetiger Funktionalkalkül}
 
-Sei $x\in \A$ normal, $\A$ unital, dann ist die von $x$ und $1$ erzeugte C*-Algebre $C^*(x,1)$ kommutativ, also isomorph zu einer Algebra $C(\Omega)$ mit $\Omega$ kompakt. Es gilt $\Omega \cong \sigma(x)$ (via $\varphi \mapsto \hat x(\varphi) \in \sigma(x)$), somit $C^*(x,1)\cong C(\sigma(x))$ und der Isomorphismus ist durch $i(x)=\id$ eindeutig bestimmt (festgelegt auf Polynomen, diese sind dicht wegen Weierstraß).
+Sei $x\in \A$ normal, $\A$ unital, dann ist die von $x$ und $1$ erzeugte C*-Algebra $C^*(x,1)$ kommutativ, also isomorph zu einer Algebra $C(\Omega)$ mit $\Omega$ kompakt. Es gilt $\Omega \cong \sigma(x)$ (via $\varphi \mapsto \hat x(\varphi) \in \sigma(x)$), somit $C^*(x,1)\cong C(\sigma(x))$ und der Isomorphismus ist durch $i(x)=\id$ eindeutig bestimmt (festgelegt auf Polynomen, diese sind dicht wegen Weierstraß).
 
 Für $f\in C(\sigma(x))$ definiere stetigen Funktionalkalkül via $f(x) \coloneqq i^{-1}(f)$. Da $i$ isometrischer *-Isomorphismus, gilt $(f+g)(x)=f(x)+g(x), (fg)(x)=f(x)g(x), (\bar f)(x)=(f(x))^*, \|f(x)\|=\|f\|$. Es gilt $\sigma(f(x))=f(\sigma(x))$, denn $\sigma(f)=\Rc(f)$.
 
@@ -290,7 +292,7 @@ Sei $T\in \B(\Hc)$ normal, dann definiert $\mathbb{P}: \B(\C) \ni A \mapsto \chi
 
 Ist $T\in \B(\Hc)$ normal, dann $\sigma_r(T)=\emptyset$, denn (O.B.d.A $\lambda=0$, sonst betrachte $\tilde A \coloneqq A-\lambda$ normal) ist $\Rc(T)$ nicht dicht, dann wegen $\Nc(T)=\Nc(T^*)$ (denn $\|Tx\|=\|T^*x\|$ für $T$ normal) folgt $\{0\} \neq \Rc(T)^\bot = \Nc(T^*) = \Nc(T)$, also $\lambda=0$ Eigenwert.
 
-Nun: $T=T^*$, dann $\lambda \mapsto P_\lambda$ auf $\sigma(T)$ strikt monoton wachsend, in $\lambda \in \sigma_c(T)$ beidseitig stop-stetig (deshalb kontinuierlich!), d.h. zusätzlich links-stop-stetig,  und mit Sprungstellen in $\lambda \in \sigma_p(T)$. Bild!
+Nun: $T=T^*$, dann $\lambda \mapsto P_\lambda$ auf $\sigma(T)$ strikt monoton wachsend, in $\lambda \in \sigma_c(T)$ beidseitig stop-stetig (deshalb kontinuierlich!), d.h.\ zusätzlich links-stop-stetig,  und mit Sprungstellen in $\lambda \in \sigma_p(T)$. Bild!
 
 Ein $\lambda\in \C$ heißt \emph{approximativer Eigenwert}, falls es Folge $(x_n)$ von Einheitsvektoren gibt mit $\|(T-\lambda)x_n\| \to 0$, insbesondere gilt für die Fourierkoeffizienten: $\langle Tx_n, x_n \rangle \to \lambda$. Das Spektrum eines normalen Operators besteht vollständig aus approximativen Eigenwerten.
 
@@ -298,9 +300,9 @@ Ein $\lambda\in \C$ heißt \emph{approximativer Eigenwert}, falls es Folge $(x_n
 
 \subsection{Begriffsbildung}
 
-Ein unbeschränkter Operator auf $\Hc$ ist ein Operator $T:\Hc \supset D(T) \to \Hc$, der nicht notwendigerweise beschränkt sein muss. Beispiele: 1) Betrachte auf $\Hc\coloneqq L^2([1,\infty))$ den Operator $T_1\coloneqq M_x$, $g\coloneqq x^{-1}$, dann $g\in \Hc$, aber $T_1g\not\in \Hc$, also $g\not\in D(T_1)$. Definiert man $g_n$ wie $g$ mit $n$ statt $\infty$, so zeigt die Folge die Unbeschränktheit.  2) Nun betrachte auf $L^2([0,1])$ den Operator $T_2\coloneqq -i \frac{d}{dx}$, dieser ist erstmal nur sinnvoll definiert für differenzierbare Funktionen und $e_n\coloneqq e^{inx}$ zeigt Unbeschränktheit: $\|e_n\|=1$, aber $\|T_2 e_n\|=n$. Mit $D(T_2)\coloneqq \{f\in C^1([0,1]): f(0)=f(1) \}$ ist $T_2$ (ebenso wie $T_1$) symmetrisch ($\langle Tx,y\rangle = \langle x, Ty \rangle$ für $x,y\in D(T)$). Verbindung: Hellinger-Töplitz!
+Ein unbeschränkter Operator auf $\Hc$ ist ein Operator $T:\Hc \supset D(T) \to \Hc$, der nicht notwendigerweise beschränkt sein muss. Beispiele: 1) Betrachte auf $\Hc\coloneqq L^2([1,\infty))$ den Operator $T_1\coloneqq M_x$, $g\coloneqq x^{-1}$, dann $g\in \Hc$, aber $T_1g\not\in \Hc$, also $g\not\in D(T_1)$. Definiert man $g_n$ wie $g$ auf $[1,n]$, so zeigt die Folge die Unbeschränktheit.  2) Nun betrachte auf $L^2([0,1])$ den Operator $T_2\coloneqq -i \frac{d}{dx}$, dieser ist erstmal nur sinnvoll definiert für differenzierbare Funktionen und $e_n\coloneqq e^{inx}$ zeigt Unbeschränktheit: $\|e_n\|=1$, aber $\|T_2 e_n\|=n$. Mit $D(T_2)\coloneqq \{f\in C^1([0,1]): f(0)=f(1) \}$ ist $T_2$ (ebenso wie $T_1$) symmetrisch ($\langle Tx,y\rangle = \langle x, Ty \rangle$ für $x,y\in D(T)$). Verbindung: Hellinger-Töplitz!
 
-Es bezeichne $\G(T)$ den Graphen von $T$. Statte $\G(T)$ mit $1$-oder $2$-direkter Summennorm aus. Auf $D(T)$ definiere die \emph{Graphennorm} $\|x\|_T \coloneqq \|(x,Tx)\|_{\G(T)}$. Dann ist $T: (D(T), \|\cdot\|_T) \to \Hc$ stetig.
+Es bezeichne $\G(T)$ den Graphen von $T$. Statte $\G(T)$ mit $1$- oder $2$-direkter Summennorm aus. Auf $D(T)$ definiere die \emph{Graphennorm} $\|x\|_T \coloneqq \|(x,Tx)\|_{\G(T)}$. Dann ist $T: (D(T), \|\cdot\|_T) \to \Hc$ stetig.
 
 Definiere Ordnung auf den unbeschränkten Operatoren via $T_1 \subset T_2$, falls $D(T_1)\subset D(T_2)$ und $T_2|_{D(T_1)} = T_1$. Daraus ergeben sich die Begriffe \emph{Fortsetzung} und \emph{Einschränkung}.
 
@@ -312,7 +314,7 @@ Eine Teilmenge $\G \subset \Hc \oplus \Kc$ ist genau dann Graph eines Operators,
 
 \subsection{Adjungierte}
 
-Zu $T:\Hc \supset D \to \Kc$ d.d. wollen wir die Adjungierte definieren. Es soll $\langle Tx,y \rangle = \langle x, T^*y \rangle$ für $x\in D$ und $y\in D^*\coloneqq D(T^*)$ gelten. Sofern $x\mapsto \langle Tx, y \rangle$ stetige LF (auf $\Hc$ wegen d.d.) ist (da $T$ unbeschränkt, ist dies nicht für alle $y$ der Fall), liefert R.F. $T^*x\coloneqq z$ wobei $\langle Tx,y \rangle = \langle x, z \rangle$ gilt. Man nennt $T^*$ die \emph{Adjungierte} von $T$. Ist $T: \Hc \supset D \to \Hc$ und $T \subset T^*$, dann heißt $T$ \emph{symmetrisch} und gilt $T^*=T$, so heißt $T$ \emph{selbstadjungiert}. 
+Zu $T:\Hc \supset D \to \Kc$ d.d.\ wollen wir die Adjungierte definieren. Es soll $\langle Tx,y \rangle = \langle x, T^*y \rangle$ für $x\in D$ und $y\in D^*\coloneqq D(T^*)$ gelten. Sofern $x\mapsto \langle Tx, y \rangle$ stetige LF (auf $\Hc$ wegen d.d.) ist (da $T$ unbeschränkt, ist dies nicht für alle $y$ der Fall), liefert R.F.\ $T^*y\coloneqq z$ wobei $\langle Tx,y \rangle = \langle x, z \rangle$ gilt. Man nennt $T^*$ die \emph{Adjungierte} von $T$. Ist $T: \Hc \supset D \to \Hc$ und $T \subset T^*$, dann heißt $T$ \emph{symmetrisch} und gilt $T^*=T$, so heißt $T$ \emph{selbstadjungiert}. 
 
 Beispiel: Sei $f\in L^2$, dann $M_f: L^2\supset D \to L^2$ Multiplikationsoperator. Es ist $M_{\overline{f}}: L^2 \supset D \to L^2$ die Adjungierte von $M_f$. Ist $f$ reell, so ist $M_f$ sicher symmetrisch und ist $D$ der maximale Definitionsbereich von $M_f$, dann auch s.a.
 
